@@ -1,0 +1,76 @@
+body {
+    background-color: #050523;
+}
+
+header {
+    background-image: url("IMG_2426%20(4).jpg");
+    background-size: auto;
+    padding-bottom: 450px;
+
+    
+}
+
+#Introduction {
+    text-align: center;
+    border-bottom: 1px solid antiquewhite;
+    
+    
+    color: antiquewhite;
+}
+
+#name {
+    font-family: Hello Beautiful Alternates;
+    font-size: 100pt;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    
+}
+
+.inhabitance {
+    font-family: Corporative Sans;
+    font-size: 24pt;
+    display: inline-block;
+    margin-top: -100px;
+}
+
+#Introduction p:nth-child(2) {
+    margin-left: -150px;
+    margin-right: 150px;
+}
+
+#Introduction p:nth-child(3) {
+    margin-left: -50px;
+}
+
+#Introduction p:nth-child(4) {
+    margin-left: 150px;
+    margin-right: -150px;
+}
+
+.Home {
+    background-color: lightcyan;
+    height: 750px;
+    width: 93.75;
+    margin: auto;
+}
+
+/*.navbar {
+    text-align: center;
+    position: fixed;
+    
+}
+.navbar li{
+    list-style-type: none;
+    display: inline-block;
+    color:red;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+}
+
+.navbar div {
+    
+    
+}*/ 

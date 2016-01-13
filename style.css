@@ -1,12 +1,11 @@
 @font-face {
     font-family: Corporative_Sans;
-    src: url("corporativesans-regular-webfont.ttf");
-    
+    src: url("Fonts/Corporative_Sans_Desktop/CorporativeSans-Book.otf");
 }
 
 @font-face {
     font-family: Hello_Beautiful_Alternates;
-    src: url("HelloBeaAltReg.ttf");
+    src:    url("Fonts/Hello_Beautiful_Alternates/HelloBeaAltReg.ttf");
     
 }
 

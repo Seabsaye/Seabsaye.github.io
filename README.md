@@ -1,2 +1,2 @@
 # Seabsaye.github.io
-Code for my website.
+Assets for my website.

@@ -1,0 +1,34 @@
+html {
+    height: 100%;
+}
+
+body { 
+    background-color: pink !imporant; 
+    min-height: 100%;
+}
+
+.contentContainer {
+    background-color: aquamarine;
+}
+
+#contentHome {
+    background-color: bisque;
+    text-align: center;
+}
+
+#homeContentContainer {
+    margin-top: 260px;
+}
+
+.midpointColumn {
+    border-bottom: 1px solid blue;
+}
+
+.col-sm-10 {
+    height: 728px;
+}
+
+.col-sm-1 {
+    background-color: dodgerblue;
+    height: 728px;
+}

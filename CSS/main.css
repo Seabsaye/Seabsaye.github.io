@@ -5,19 +5,25 @@ html {
 body { 
     background-color: pink !imporant; 
     min-height: 100%;
+
 }
 
-.contentContainer {
-    background-color: aquamarine;
+#mainContainer {
+    
+   
 }
 
-#contentHome {
-    background-color: bisque;
+.sectionContainer {
+    
     text-align: center;
 }
 
-#homeContentContainer {
-    margin-top: 260px;
+.contentContainer {
+    border: 1px solid blue;
+    display: inline-block;
+    width: 95%;
+    height: 1000px;
+    padding-top: 300px;
 }
 
 .midpointColumn {
@@ -31,4 +37,15 @@ body {
 .col-sm-1 {
     background-color: dodgerblue;
     height: 728px;
+}
+
+#sidebarContainer {
+    
+    background-color: blue;
+    position: fixed;
+    z-index: 1000;
+    height: 100px;
+    width: 100px;
+    right: 0px;
+    
 }

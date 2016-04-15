@@ -10,7 +10,6 @@ body {
 
 #mainContainer {
     
-   
 }
 
 .sectionContainer {
@@ -39,13 +38,33 @@ body {
     height: 728px;
 }
 
-#sidebarContainer {
-    
-    background-color: blue;
+#navbar {
     position: fixed;
-    z-index: 1000;
-    height: 100px;
-    width: 100px;
+    background-color: beige;
+    margin-left: 2.5%;
+    width: 95%;
+    display: inline-block;
+}
+
+p{
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    float: right;
     right: 0px;
+    background-color: blue;
+    padding: 0;
+}
+
+.navbarElement {
+    display: inline-block;
+    
+}
+
+.navbarElement:last-child {
+    
+ 
     
 }

@@ -1,11 +1,6 @@
-html {
-    height: 100%;
-}
-
 body { 
-    background-color: pink !imporant; 
-    min-height: 100%;
-
+    font-size: 16px !important; 
+    font-family: Zona Pro Light !important;
 }
 
 #mainContainer {
@@ -13,15 +8,23 @@ body {
 }
 
 .sectionContainer {
-    
     text-align: center;
+    border: 1px solid blue;
+}
+
+#homeSection {
+    /*background-image: url("../Images/treezy.jpg");
+    background-size: cover;*/
 }
 
 .contentContainer {
-    border: 1px solid blue;
+    border: 1px solid red;
     display: inline-block;
     width: 95%;
-    height: 1000px;
+}
+
+#homeSection .contentContainer {
+    height: 740px;
     padding-top: 300px;
 }
 
@@ -40,31 +43,36 @@ body {
 
 #navbar {
     position: fixed;
-    background-color: beige;
-    margin-left: 2.5%;
-    width: 95%;
+    /*margin-left: 2.5%;
+    width: 95%;*/
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+p {
     display: inline-block;
 }
 
-p{
-    display: inline-block;
-}
-
-ul {
+.navbarUl {
+    width: 60%;
+    text-align: right;
     list-style: none;
     float: right;
     right: 0px;
-    background-color: blue;
     padding: 0;
+    margin: 0;
 }
 
 .navbarElement {
     display: inline-block;
-    
+    margin: 0px 12px;
+    height: 32px;
 }
 
-.navbarElement:last-child {
-    
- 
-    
+.navbarText {
+    margin: 5px 0px 0px 0px;
+}
+
+.navbarText:first-child {
+    margin-left: 12px;
 }

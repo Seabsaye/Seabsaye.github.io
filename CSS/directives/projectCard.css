@@ -1,0 +1,38 @@
+.cardFrame {
+	width: 330px;
+	border: 1px solid black;
+	border-radius: 6px;
+	display: inline-block;
+	margin: 0px 10px;
+}
+
+.imageContainer {
+	background-color: pink;
+	border-top-left-radius: 6px; 
+	border-top-right-radius: 6px; 
+	height: 200px;
+}
+
+img {
+	width: 330px; 
+	height: 200px;
+}
+
+.restContainer {
+	margin: auto;
+	text-align: center;
+	width: 84%;
+	background-color: blue;
+}
+
+.cardButton {
+	margin: inherit;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 6px;
+	margin-bottom: 16px;
+}
+h3 {
+	font-size: 16px;
+	margin: 8px 14px;
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html>
+<html ng-app="siteModule">
     
     <head>
         
@@ -9,6 +9,7 @@
         <title>sebastian kolosa</title>
         
         <link type="test/css" rel="stylesheet" href="CSS/main.css"/>
+        <link type="text/css" rel="stylesheet" href="CSS/directives/projectCard.css"/>
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> 
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -52,7 +53,13 @@
                     <p>Hey! I'm Sebastian Kolosa, although most call me Seb. I'm a Systems Design Engineering student within the University of Waterloo, currently in the 1B term. Interests and growing passions who's sum would be the current "me" would include web and mobile software development, as well as the design process.</p>
                 </div>
             </div>
-            
+            <div class="sectionContainer">
+                <div class="contentContainer" ng-controller="cardController">
+                    <h2>PROJECTS</h2>
+                    <project-card type="arkParadigm"></project-card>
+                    <project-card type="marvin"></project-card>
+                </div>
+            </div>
         </div>
       
     </body>

@@ -1,6 +1,6 @@
 body { 
     font-size: 16px !important; 
-    font-family: Zona Pro Light !important;
+    font-family: Corporative Sans Book !important;
 }
 
 #mainContainer {
@@ -10,6 +10,7 @@ body {
 .sectionContainer {
     text-align: center;
     border: 1px solid blue;
+    background-color: #f2f2f2;
 }
 
 #homeSection {
@@ -75,4 +76,8 @@ p {
 
 .navbarText:first-child {
     margin-left: 12px;
+}
+
+#even {
+    background-color: #ffffff;
 }

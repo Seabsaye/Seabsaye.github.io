@@ -1,38 +1,44 @@
 .cardFrame {
 	width: 330px;
-	border: 1px solid black;
+	/*height: 490px;*/
 	border-radius: 6px;
 	display: inline-block;
-	margin: 0px 10px;
+	margin: 10px 10px;
+	background-color: #ffffff;
+	box-shadow: 1px 4px 5px -1px;
 }
 
 .imageContainer {
-	background-color: pink;
 	border-top-left-radius: 6px; 
 	border-top-right-radius: 6px; 
 	height: 200px;
 }
 
 img {
-	width: 330px; 
-	height: 200px;
+	margin-top: 22%;
 }
 
 .restContainer {
 	margin: auto;
 	text-align: center;
 	width: 84%;
-	background-color: blue;
 }
 
 .cardButton {
+	cursor: pointer;
 	margin: inherit;
+	margin-top: 26px;
+	margin-bottom: 18px;
+	width: 150px;
 	display: inline-block;
-	border: 1px solid black;
+	border: 1px solid #e4e4e4;
 	border-radius: 6px;
-	margin-bottom: 16px;
 }
-h3 {
-	font-size: 16px;
-	margin: 8px 14px;
+
+.cardButtonPrompt {
+	/*margin: 8px 14px;*/
+}
+
+a:link, a:visited {
+	text-decoration: none;
 }

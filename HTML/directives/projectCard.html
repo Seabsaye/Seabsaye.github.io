@@ -3,10 +3,12 @@
 		<img ng-src="{{cardProperties.image}}"/>
 	</div>
 	<div class="restContainer">
-		<h2>{{cardProperties.title}}</h2>
-		<p>{{cardProperties.description}}</p>
-		<div class="cardButton">
-			<h3>{{cardProperties.button}}</h3>
-		</div>
+		<h2 class="cardTitle">{{cardProperties.title}}</h2>
+		<p class="cardDescription">{{cardProperties.description}}</p>
+		<a ng-href="{{cardProperties.link}}">
+			<div class="cardButton">
+				<h4 class="cardButtonPrompt">{{cardProperties.button}}</h4>
+			</div>
+		</a>
 	</div>
 </div>

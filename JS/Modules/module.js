@@ -1,0 +1,1 @@
+angular.module("siteModule", ["cardModule", "navBarModule"])

@@ -19,10 +19,11 @@
 
         <script src="JS/Modules/module.js"></script>
         <script src="JS/Directives/projectCard.js"></script>
-        <script src="JS/script.js"></script>
+        <script src="JS/pageLayout.js"></script>
+        <script src="JS/navBar.js"></script>
         
     </head>
-    <body>
+    <body ng-controller="pageLayoutController">
         
         <div id="navbar" ng-controller="navBarController">
             <p class="navbarText">Sebastian Kolosa</p>
@@ -56,9 +57,13 @@
         </div>
         <div id="mainContainer">
             <div class="sectionContainer" id="homeSection">
-                <div class="contentContainer">
-                    <h2>SEBASTIAN KOLOSA</h2>
-                    <p>Student | Seeker | Adventurer</p>
+
+                <div class="contentContainer" id="test">
+                    <!--<img id="homeBackground" src="Images/treezy.jpg"/>-->
+                    <div id="contentHome">
+                        <h2>SEBASTIAN KOLOSA</h2>
+                        <p>Student | Seeker | Adventurer</p>
+                    </div>
                 </div>
             </div>
             <div class="sectionContainer" id="even">

@@ -1,6 +1,6 @@
 angular.module("cardModule", [])
 
-.controller("cardController", ["$scope", function($scope) {
+.controller("cardController", ["$scope", "cardButtonFactory", function($scope, cardButtonFactory) {
 
 	$scope.arkParadigm = {
 
@@ -26,6 +26,14 @@ angular.module("cardModule", [])
 	
 	};
 
+	$scope.buttonOnHover = function(button) {
+		cardButtonFactory.upTheOpacity(button);
+	};
+
+	$scope.buttonOffHover = function(button) {
+		cardButtonFactory.downTheOpacity(button);
+	};
+
 }])
 
 .directive("projectCard", function() {
@@ -40,4 +48,24 @@ angular.module("cardModule", [])
 
 	};
 
-});
+})
+
+.factory("cardButtonFactory", function() {
+
+	return {
+
+		upTheOpacity: function(element) {
+			
+			$(element).animate({opacity: '1.0'}, 2000);
+
+		},
+
+		downTheOpacity: function(element) {
+
+			$(element).animate({opacity: '0.0'}, 2000);
+
+		}
+
+	}
+
+})

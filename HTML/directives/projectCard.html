@@ -1,4 +1,4 @@
-<div class="cardFrame">
+<div class="cardFrame" ng-controller="cardController">
 	<div class="imageContainer">
 		<img ng-src="{{cardProperties.image}}"/>
 	</div>
@@ -6,7 +6,7 @@
 		<h2 class="cardTitle">{{cardProperties.title}}</h2>
 		<p class="cardDescription">{{cardProperties.description}}</p>
 		<a ng-href="{{cardProperties.link}}">
-			<div class="cardButton">
+			<div class="cardButton" ng-mouseover="buttonOnHover('.cardButton')" ng-mouseleave="buttonOffHover()">
 				<h4 class="cardButtonPrompt">{{cardProperties.button}}</h4>
 			</div>
 		</a>

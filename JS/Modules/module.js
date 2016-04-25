@@ -1,1 +1,1 @@
-angular.module("siteModule", ["cardModule", "navBarModule"])
+angular.module("siteModule", ["pageLayoutModule", "cardModule", "navBarModule"])

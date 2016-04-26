@@ -4,25 +4,40 @@
     
     <head>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
-        <title>sebastian kolosa</title>
+        <!-- css-frameworks -->
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <!-- /css-frameworks --> 
+
+        <!-- fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Hind+Siliguri|Catamaran|Yantramanav|Poppins|Ramabhadra|Comfortaa|Sarala|Work+Sans|Michroma|Asap|Khula' rel='stylesheet' type='text/css'>
         
+        <!-- /fonts -->
+
+        <!-- css -->
         <link type="test/css" rel="stylesheet" href="CSS/main.css"/>
         <link type="text/css" rel="stylesheet" href="CSS/directives/projectCard.css"/>
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'> 
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- /css -->
 
+        <!-- js-frameworks -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="JS/plugins/jquery-color/jquery.color.js"></script>
+        <!-- /js-frameworks -->
+
+        <!-- scripts -->
         <script src="JS/Modules/module.js"></script>
         <script src="JS/Directives/projectCard.js"></script>
         <script src="JS/pageLayout.js"></script>
         <script src="JS/navBar.js"></script>
+        <!-- /scripts -->
+
+        <title>sebastian kolosa</title>
         
     </head>
+
     <body ng-controller="pageLayoutController">
         
         <div id="navbar" ng-controller="navBarController">
@@ -62,7 +77,7 @@
                     <!--<img id="homeBackground" src="Images/treezy.jpg"/>-->
                     <div id="contentHome">
                         <h2>SEBASTIAN KOLOSA</h2>
-                        <p>Student | Seeker | Adventurer</p>
+                        <p>"" | "" | ""</p>
                     </div>
                 </div>
             </div>
@@ -73,12 +88,10 @@
                 </div>
             </div>
             <div class="sectionContainer">
-                <div class="contentContainer" ng-controller="cardController">
-                    <h2>PROJECTS</h2>
-                    <project-card type="arkParadigm"></project-card>
-                    <project-card type="joinmi"></project-card>
-                    <project-card type="pixelbot"></project-card>
-                    <project-card type="marvin"></project-card>
+                <div class="contentContainer" ng-controller="cardController">   
+                    <h2>Projects</h2>
+                    <h4>Recent things I've been fiddling around with.</h4>
+                    <project-card ng-repeat="project in projects" type="project" ></project-card>
                 </div>
             </div>
         </div>

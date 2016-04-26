@@ -1,6 +1,6 @@
 body { 
     font-size: 16px !important; 
-    font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: 'Asap', sans-serif !important;
 }
 
 #mainContainer {
@@ -14,7 +14,7 @@ body {
 }
 
 #homeSection {
-    
+     background-image: url("../Images/background.jpg"); 
 }
 
 #contentHome {
@@ -30,7 +30,7 @@ body {
 }
 
 /*#homeSection .contentContainer */ #test{
- 
+  
 }
 
 /*#homeBackground {

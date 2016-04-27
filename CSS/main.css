@@ -9,12 +9,12 @@ body {
 
 .sectionContainer {
     text-align: center;
-   
     background-color: #f2f2f2;
 }
 
-#homeSection {
-     background-image: url("../Images/background.jpg"); 
+#sectionHome {
+    background-image: url("../Images/background.jpg"); 
+    background-size: cover;
 }
 
 #contentHome {
@@ -29,14 +29,10 @@ body {
     width: 95%;
 }
 
-/*#homeSection .contentContainer */ #test{
-  
-}
-
-/*#homeBackground {
+#homeBackground {
     margin:0;
     width: 100%;
-}*/
+}
 
 .midpointColumn {
     border-bottom: 1px solid blue;
@@ -53,12 +49,14 @@ body {
 
 #navbar {
     position: fixed;
+    z-index: 10;
     /*margin-left: 2.5%;
     width: 95%;*/
     width: 100%;
     height: 48px;
-    border-bottom: 1px solid black;
-    background-color: none;
+    border-bottom: 1px solid #FFFFFF;
+    background-color: rgba(255,255,255,0);
+    color: #000000;
 }
 
 p {
@@ -83,6 +81,7 @@ p {
 
 .navbarText {
     margin: 14px 0px 0px 0px;
+    cursor: pointer;
 }
 
 .navbarText:first-child {
@@ -100,6 +99,7 @@ p {
     height: 30px;
     margin: 9px 12px 9px 0px;
     cursor: pointer;
+    display: none;
 }
 
 #hamburgerIcon {

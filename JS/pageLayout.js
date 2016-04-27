@@ -1,21 +1,43 @@
 angular.module("pageLayoutModule", [])
 
-.controller("pageLayoutController", ["$scope", function($scope) {
+.controller("pageLayoutController", ["$scope", "layoutDimensionsFactory", function($scope, layoutDimensionsFactory) {
 
-	$(document).ready(function() {
+	layoutDimensionsFactory.instantiateInitialHeight();
 
-		var windowHeight = $(window).height();
+	layoutDimensionsFactory.heightResizeListener();
 
-		$("#test").css({"height": windowHeight});
-		
-
-	});
-
-	$(window).resize(function() {
-
-		var windowHeight = $(window).height();
-		console.log("Test");
-		$("#test").css({"height": windowHeight});
-
-	});
 }])
+
+.factory("layoutDimensionsFactory", function() {
+
+	return {
+
+		instantiateInitialHeight: function() {
+
+			$(document).ready(function() {
+
+				var windowHeight = $(window).height();
+
+				$("#contentHome").css({"height": windowHeight});
+				
+			});
+
+		},
+
+		heightResizeListener: function() {
+
+			$(window).resize(function() {
+
+				var windowHeight = $(window).height();
+
+				$("#contentHome").css({"height": windowHeight});
+
+			});
+
+		}
+
+	}
+
+})
+
+.factory()

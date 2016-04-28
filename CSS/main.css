@@ -55,8 +55,6 @@ body {
     width: 100%;
     height: 48px;
     border-bottom: 1px solid #FFFFFF;
-    background-color: rgba(255,255,255,0);
-    color: #000000;
 }
 
 p {
@@ -81,6 +79,7 @@ p {
 
 .navbarText {
     margin: 14px 0px 0px 0px;
+    color: #FFFFFF;
     cursor: pointer;
 }
 

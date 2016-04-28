@@ -3,8 +3,11 @@ angular.module("navBarModule", [])
 .controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory) {
 
 	navBarCSSFactory.initialCSS();
+
 	navBarCollapsedFactory.setNavBarHorizontal();
 	navBarCollapsedFactory.collapsedNavBarCSS();
+
+	navBarScrollFactory.setScrollControl()
 	navBarScrollFactory.scrolledNavBar();
 
 
@@ -18,41 +21,101 @@ angular.module("navBarModule", [])
 
 		initialCSS: function() {
 
-			$(document).ready(function() {
+			$(window).load(function(){
+				setTimeout(function() { 
 		
-				var windowWidth = $(window).width();
+					var windowWidth = $(window).width();
+					var windowHeight = $(window).height();
+					var scrollBarDisplacement = $(document).scrollTop();
 
-				if (windowWidth < 768) {
-					$(NAVBAR_ID).css("background-color", "#FFFFFF");
-					$("#hamburgerCollapseToggle").css({display: "block"});
-					$(".navbarUl").css({display: "none"});
-				}
+					if (windowWidth < 768) {
+
+						$(NAVBAR_ID).css("background-color", "#FFFFFF");
+						$("#hamburgerCollapseToggle").css({display: "block"});
+						$(".navbarUl").css({display: "none"});
+						$(".navbarText").css({color: "#000000"});
+
+					} else if (scrollBarDisplacement > windowHeight) {
+
+						$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
+						$(".navbarText").css({color: "#000000"});
+
+					}
+
+				}, 1);
 
 			});
 
 		},
 
-		enableSecondaryCSS: function() {
+		enableSecondaryCSS: function(event) {
 			
 			$("#collapsedNavBar").css({visibility: "hidden"});
 
 			$(NAVBAR_ID).stop(true).fadeOut(50, function() {
-				$("#collapsedNavBar").css({visibility: "visible"});
+
 				$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
-				$("#hamburgerCollapseToggle").css({display: "block"});
-				$(".navbarUl").css({display: "none"});
+
+				switch (event) {
+
+					case "collapse":
+
+						$("#hamburgerCollapseToggle").css({display: "block"});
+						$(".navbarUl").css({display: "none"});
+
+						break;
+
+					case "scroll":
+
+						break;
+
+				}
+
+				$(".navbarText").css({color: "#000000"});
+				$("#collapsedNavBar").css({visibility: "visible"});
 				$(NAVBAR_ID).stop(true).fadeIn(300);
 
 			});
 
 		},
 
-		disableSecondaryCSS: function() {
+		disableSecondaryCSS: function(event) {
 
 			$(NAVBAR_ID).stop(true).fadeOut(50, function() {
-				$(".navbarUl").css({display: "block"});
-				$("#hamburgerCollapseToggle").css({display: "none"});
-				$(NAVBAR_ID).css({backgroundColor: "transparent"});
+
+				switch (event) {
+
+					case "collapse":
+
+						$(".navbarUl").css({display: "block"});
+						$("#hamburgerCollapseToggle").css({display: "none"});
+
+						var windowHeight = $(window).height();
+						var scrollBarDisplacement = $(window).scrollTop();
+
+						if (scrollBarDisplacement < windowHeight) {
+							$(".navbarText").css({color: "#FFFFFF"});
+							$(NAVBAR_ID).css({backgroundColor: "transparent"});
+						}
+					
+						break;
+
+					case "scroll":
+
+						var windowWidth = $(window).width();
+
+						if (windowWidth < 768) {
+							$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
+						} else {
+							$(".navbarText").css({color: "#FFFFFF"});
+							$(NAVBAR_ID).css({backgroundColor: "transparent"});
+						}
+
+						break;
+
+				}
+
+				
 				$(NAVBAR_ID).stop(true).fadeIn(300);
 
 			});
@@ -94,15 +157,16 @@ angular.module("navBarModule", [])
 				if (windowWidth < 768) {
 
 					if (navBarHorizontal === true) {
-						navBarCSSFactory.enableSecondaryCSS();
+						navBarHorizontal = false;
+						navBarCSSFactory.enableSecondaryCSS("collapse");
 					}
 
-					navBarHorizontal = false;
+					
 
 				} else {
 
 					if (navBarHorizontal === false) {
-						navBarCSSFactory.disableSecondaryCSS();
+						navBarCSSFactory.disableSecondaryCSS("collapse");
 					}
 
 					navBarHorizontal = true;
@@ -121,20 +185,61 @@ angular.module("navBarModule", [])
 
 .factory("navBarScrollFactory", ["navBarCSSFactory", function(navBarCSSFactory) {
 
+	var didSurpassWindowHeight;
+
 	return {
 		
+		setScrollControl: function() {
+
+			$(window).load(function(){
+			    setTimeout(function() {
+
+			    	var windowHeight = $(window).height();
+				
+					var scrollBarDisplacement = $(window).scrollTop();
+						
+					if (scrollBarDisplacement > windowHeight) {
+						didSurpassWindowHeight = true;
+						
+						
+					} else {
+						didSurpassWindowHeight = false;
+					}
+
+			    }, 1);
+			});
+		},
+
 		scrolledNavBar: function() {
 
 			$(window).scroll(function() {
 
 				var windowHeight = $(window).height();
-				var winowWidth = $(window).width();
+				var windowWidth = $(window).width();
 				var scrollBarDisplacement = $(document).scrollTop();
 
 				if (scrollBarDisplacement > windowHeight) {
 					
+					if (didSurpassWindowHeight === false) {
+
+						if (windowWidth > 768) {
+							navBarCSSFactory.enableSecondaryCSS("scroll");
+						}
+
+						didSurpassWindowHeight = true;
+					}
+
 				} else {
 					
+					if (didSurpassWindowHeight === true) {
+
+						if (windowWidth > 768) {
+							navBarCSSFactory.disableSecondaryCSS("scroll");
+						}
+						
+					}
+
+					didSurpassWindowHeight = false;
 				}
 
 			});

@@ -1,6 +1,6 @@
-angular.module("navBarModule", [])
+angular.module("navBarModule", ["cardModule"])
 
-.controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory) {
+.controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory) {
 
 	navBarCSSFactory.initialCSS();
 
@@ -10,6 +10,19 @@ angular.module("navBarModule", [])
 	navBarScrollFactory.setScrollControl()
 	navBarScrollFactory.scrolledNavBar();
 
+	$scope.onHamburgerHover = function() {
+
+		var HAMBURGER_BUTTON_ID = "#hamburgerCollapseToggle";
+		var OPACITY = "0.1";
+		buttonFactory.upTheOpacity(HAMBURGER_BUTTON_ID, OPACITY);
+	}
+
+	$scope.offHamburgerHover = function() {
+
+		var HAMBURGER_BUTTON_ID = "#hamburgerCollapseToggle";
+		buttonFactory.downTheOpacity(HAMBURGER_BUTTON_ID);
+
+	}
 
 }])
 
@@ -236,7 +249,7 @@ angular.module("navBarModule", [])
 						if (windowWidth > 768) {
 							navBarCSSFactory.disableSecondaryCSS("scroll");
 						}
-						
+
 					}
 
 					didSurpassWindowHeight = false;
@@ -249,3 +262,19 @@ angular.module("navBarModule", [])
 	}
 
 }])
+
+// .factory("navBarHoverFactory", ["buttonFactory", function() {
+
+// 	return {
+
+// 		onHamburgerButton: function() {
+
+// 			buttonFactory.upTheOpacity("#hamburgerCollapseToggle");
+
+// 		},
+
+
+
+// 	}
+
+// }])

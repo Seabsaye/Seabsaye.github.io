@@ -1,6 +1,6 @@
 angular.module("cardModule", [])
 
-.controller("cardController", ["$scope", "cardButtonFactory", function($scope, cardButtonFactory) {
+.controller("cardController", ["$scope", "buttonFactory", function($scope, buttonFactory) {
 
 	$scope.arkParadigm = {
 
@@ -33,14 +33,16 @@ angular.module("cardModule", [])
 	$scope.buttonOnHover = function(buttonIndex) {
 
 		var button = cardButtonInstances[buttonIndex];
-		cardButtonFactory.upTheOpacity(button);
+		var OPACITY = "0.04";
+
+		buttonFactory.upTheOpacity(button, OPACITY);
 
 	};
 
 	$scope.buttonOffHover = function(buttonIndex) {
 
 		var button = cardButtonInstances[buttonIndex];
-		cardButtonFactory.downTheOpacity(button);
+		buttonFactory.downTheOpacity(button);
 
 	};
 
@@ -60,12 +62,12 @@ angular.module("cardModule", [])
 
 })
 
-.factory("cardButtonFactory", function() {
+.factory("buttonFactory", function() {
 
 	return {
 
-		upTheOpacity: function(element) {
-			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: "0.04"}) }, 225);
+		upTheOpacity: function(element, alpha) {
+			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: alpha}) }, 225);
 		},
 
 		downTheOpacity: function(element) {

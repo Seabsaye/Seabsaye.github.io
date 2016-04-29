@@ -1,4 +1,4 @@
-angular.module("cardModule", [])
+angular.module("cardModule", ["pageLayoutModule"])
 
 .controller("cardController", ["$scope", "buttonFactory", function($scope, buttonFactory) {
 
@@ -26,7 +26,7 @@ angular.module("cardModule", [])
 	
 	};
 
-	$scope.projects = [$scope.arkParadigm, $scope.joinmi, $scope.pixelbot, $scope.marvin];
+	$scope.projects = [$scope.arkParadigm, $scope.joinmi, $scope.pixelbot, /*$scope.marvin*/];
 
 	var cardButtonInstances = document.getElementsByClassName("cardButton");
 
@@ -59,21 +59,5 @@ angular.module("cardModule", [])
 		}
 
 	};
-
-})
-
-.factory("buttonFactory", function() {
-
-	return {
-
-		upTheOpacity: function(element, alpha) {
-			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: alpha}) }, 225);
-		},
-
-		downTheOpacity: function(element) {
-			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: "0.00"}) }, 225);
-		}
-
-	}
 
 })

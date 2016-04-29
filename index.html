@@ -8,11 +8,11 @@
         
         <!-- css-frameworks -->
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
         <!-- /css-frameworks --> 
 
         <!-- fonts -->
         <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Hind+Siliguri|Catamaran|Yantramanav|Poppins|Ramabhadra|Comfortaa|Sarala|Work+Sans|Michroma|Asap|Khula' rel='stylesheet' type='text/css'>
-        
         <!-- /fonts -->
 
         <!-- css -->
@@ -32,6 +32,7 @@
         <script src="JS/Directives/projectCard.js"></script>
         <script src="JS/pageLayout.js"></script>
         <script src="JS/navBar.js"></script>
+        <script src="JS/footer.js"></script>
         <!-- /scripts -->
 
         <title>sebastian kolosa</title>
@@ -41,19 +42,19 @@
     <body ng-controller="pageLayoutController">
         
         <div id="navbar" ng-controller="navBarController">
-            <p class="navbarText">Sebastian Kolosa</p>
+            <p class="navbarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>
             <ul class="navbarUl">
                 <li class="navbarElement">
-                    <p class="navbarText">Resume</p>
+                    <a class="navbarText" id="navBarTextResume" href="" ng-mouseover="onLinkHover('#navBarTextResume')" ng-mouseleave="offLinkHover('#navBarTextResume')">Resume</a>
                 </li>
                 <li class="navbarElement">
-                    <p class="navbarText">About</p>
+                    <p class="navbarText" id="navBarTextAbout" ng-click="scrollTo('#even')" ng-mouseover="onLinkHover('#navBarTextAbout')" ng-mouseleave="offLinkHover('#navBarTextAbout')">About</p>
                 </li>
                 <li class="navbarElement">
-                    <p class="navbarText">Projects</p>
+                    <p class="navbarText" id="navBarTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#navBarTextProjects')" ng-mouseleave="offLinkHover('#navBarTextProjects')">Projects</p>
                 </li>
                 <li class="navbarElement">
-                    <p class="navbarText">Contact</p>
+                    <p class="navbarText" id="navBarTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#navBarTextContact')" ng-mouseleave="offLinkHover('#navBarTextContact')">Contact</p>
                 </li>
             </ul>
         
@@ -62,13 +63,12 @@
             </div>
             <div class="panel-collapse collapse hidden-sm hidden-md hidden-lg" id="collapsedNavBar" aria-labelledby="hamburgerCollapseToggle">
                 <ul class="list-group">
-                    <li class="list-group-item">Resume</li>
-                    <li class="list-group-item">About</li>
-                    <li class="list-group-item">Projects</li>
-                    <li class="list-group-item">Contact</li>
+                    <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume a')" ng-mouseleave="offLinkHover('#collapsableTextResume a')"><a>Resume</a></li>
+                    <li class="list-group-item" id="collapsableTextAbout" ng-click="scrollTo('#even')" ng-mouseover="onLinkHover('#collapsableTextAbout')" ng-mouseleave="offLinkHover('#collapsableTextAbout')">About</li>
+                    <li class="list-group-item" id="collapsableTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#collapsableTextProjects')" ng-mouseleave="offLinkHover('#collapsableTextProjects')">Projects</li>
+                    <li class="list-group-item" id="collapsableTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#collapsableTextContact')" ng-mouseleave="offLinkHover('#collapsableTextContact')">Contact</li>
                 <ul>
             </div>
-
         </div>
         <div id="mainContainer">
             <div class="sectionContainer" id="sectionHome">
@@ -87,11 +87,17 @@
                     <p>Hey! I'm Sebastian Kolosa, although most call me Seb. I'm a Systems Design Engineering student within the University of Waterloo, currently in the 1B term. Interests and growing passions who's sum would be the current "me" would include web and mobile software development, as well as the design process.</p>
                 </div>
             </div>
-            <div class="sectionContainer">
-                <div class="contentContainer" ng-controller="cardController">   
+            <div class="sectionContainer" id="sectionProjects">
+                <div class="contentContainer" id="contentProjects" ng-controller="cardController">   
                     <h2>Projects</h2>
-                    <h4>Recent things I've been fiddling around with.</h4>
+                    <h4>Things I've worked on recently.</h4>
                     <project-card ng-repeat="project in projects" type="project" ></project-card>
+                </div>
+            </div>
+            <div class="sectionContainer" id="sectionContact" ng-controller="footerController">
+                <div class="contentContainer" id="contentContact">
+                    <i class="fa fa-github-alt"></i>
+                    <h6 id="copyrightStatement">Copyright &copy 2016 Sebastian Kolosa</h6>
                 </div>
             </div>
         </div>

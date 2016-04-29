@@ -1,6 +1,6 @@
-angular.module("navBarModule", ["cardModule"])
+angular.module("navBarModule", ["pageLayoutModule"])
 
-.controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory) {
+.controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", "triggerScrollFactory", "hyperTextFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory, triggerScrollFactory, hyperTextFactory) {
 
 	navBarCSSFactory.initialCSS();
 
@@ -21,6 +21,21 @@ angular.module("navBarModule", ["cardModule"])
 
 		var HAMBURGER_BUTTON_ID = "#hamburgerCollapseToggle";
 		buttonFactory.downTheOpacity(HAMBURGER_BUTTON_ID);
+
+	}
+
+	$scope.scrollTo = function(scrollToElement) {
+		triggerScrollFactory.scroll(scrollToElement);
+	}
+
+	$scope.onLinkHover = function(link) {
+		hyperTextFactory.enableHoverCSS(link);
+	}
+
+	$scope.offLinkHover = function(link) {
+
+		var ELEMENT_TYPE = "navBar";
+		hyperTextFactory.disableHoverCSS(link, ELEMENT_TYPE);
 
 	}
 
@@ -231,7 +246,8 @@ angular.module("navBarModule", ["cardModule"])
 				var windowWidth = $(window).width();
 				var scrollBarDisplacement = $(document).scrollTop();
 
-				if (scrollBarDisplacement > windowHeight) {
+				//-1 so set's secondary CSS upon clicking "About"
+				if (scrollBarDisplacement > windowHeight - 1) {
 					
 					if (didSurpassWindowHeight === false) {
 
@@ -262,19 +278,3 @@ angular.module("navBarModule", ["cardModule"])
 	}
 
 }])
-
-// .factory("navBarHoverFactory", ["buttonFactory", function() {
-
-// 	return {
-
-// 		onHamburgerButton: function() {
-
-// 			buttonFactory.upTheOpacity("#hamburgerCollapseToggle");
-
-// 		},
-
-
-
-// 	}
-
-// }])

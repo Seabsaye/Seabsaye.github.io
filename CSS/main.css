@@ -1,6 +1,11 @@
 body { 
     font-size: 16px !important; 
     font-family: 'Asap', sans-serif !important;
+
+    /* disable font-weight increase with white background */
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
 }
 
 #mainContainer {
@@ -24,7 +29,7 @@ body {
 }
 
 .contentContainer {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     display: inline-block;
     width: 95%;
 }
@@ -57,7 +62,7 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-p {
+#navbar p {
     display: inline-block;
 }
 
@@ -75,6 +80,11 @@ p {
     display: inline-block;
     margin: 0px 12px;
     height: 32px;
+}
+
+.navbarElement a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .navbarText {
@@ -120,9 +130,31 @@ p {
 
 .list-group-item {
     border: none !important;
-    background-color: rgba(250,250,250,1) !important;
+    background-color: rgba(255,255,255,1) !important;
+    cursor: pointer;
+}
+
+.list-group-item a:link, .list-group-item a:hover, .list-group-item a:visited, .list-group-item a {
+    text-decoration: none;
+    color: #000000;
 }
 
 #even {
-    background-color: #5b5251;
+    background-color: #5b5251; /*31322e*/
+}
+
+#sectionProjects {
+
+}
+
+#contentProjects {
+    padding-bottom: 0px;
+}
+
+#sectionContact {
+    background-color: #FFFFFF;
+}
+
+#contentContact {
+   
 }

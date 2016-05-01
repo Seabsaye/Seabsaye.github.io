@@ -1,6 +1,8 @@
-angular.module("navBarModule", ["pageLayoutModule"])
+angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 
-.controller("navBarController", ["$scope", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", "triggerScrollFactory", "hyperTextFactory", function($scope, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory, triggerScrollFactory, hyperTextFactory) {
+.controller("navBarController", ["$scope", "constantsFactory", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", "triggerScrollFactory", "hyperTextFactory", function($scope, constantsFactory, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory, triggerScrollFactory, hyperTextFactory) {
+
+	var hamburgerButtonId = constantsFactory.getHAMBURGER_BUTTON_ID();
 
 	navBarCSSFactory.initialCSS();
 
@@ -12,20 +14,19 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 	$scope.onHamburgerHover = function() {
 
-		var HAMBURGER_BUTTON_ID = "#hamburgerCollapseToggle";
-		var OPACITY = "0.1";
-		buttonFactory.upTheOpacity(HAMBURGER_BUTTON_ID, OPACITY);
+		var opacity = "0.1";
+		buttonFactory.upTheOpacity(hamburgerButtonId, opacity);
 	}
 
 	$scope.offHamburgerHover = function() {
 
-		var HAMBURGER_BUTTON_ID = "#hamburgerCollapseToggle";
-		buttonFactory.downTheOpacity(HAMBURGER_BUTTON_ID);
+
+		buttonFactory.downTheOpacity(hamburgerButtonId);
 
 	}
 
 	$scope.scrollTo = function(scrollToElement) {
-		triggerScrollFactory.scroll(scrollToElement);
+		triggerScrollFactory.navBarScroll(scrollToElement);
 	}
 
 	$scope.onLinkHover = function(link) {
@@ -34,16 +35,22 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 	$scope.offLinkHover = function(link) {
 
-		var ELEMENT_TYPE = "navBar";
-		hyperTextFactory.disableHoverCSS(link, ELEMENT_TYPE);
+		var elementType = "navBar";
+		hyperTextFactory.disableHoverCSS(link, elementType);
 
 	}
 
 }])
 
-.factory("navBarCSSFactory", function() {
+.factory("navBarCSSFactory", ["constantsFactory", function(constantsFactory) {
 
-	var NAVBAR_ID = "#navbar";
+	var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBarCollapsedTabContainer = constantsFactory.getNAVBAR_COLLAPSED_TAB_CONTAINER_ID();
+	var hamburgerButtonId = constantsFactory.getHAMBURGER_BUTTON_ID();
+	var navBarTabsListClass = constantsFactory.getNAVBAR_TABS_LIST_CLASS();
+	var navBarTextClass = constantsFactory.getNAVBAR_TEXT_CLASS(); 
+
+	var navBarHeight = parseInt($(navBarId).css("height"));
 
 	return {
 
@@ -58,15 +65,15 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 					if (windowWidth < 768) {
 
-						$(NAVBAR_ID).css("background-color", "#FFFFFF");
-						$("#hamburgerCollapseToggle").css({display: "block"});
-						$(".navbarUl").css({display: "none"});
-						$(".navbarText").css({color: "#000000"});
+						$(navBarId).css("background-color", "#FFFFFF");
+						$(hamburgerButtonId).css({display: "block"});
+						$(navBarTabsListClass).css({display: "none"});
+						$(navBarTextClass).css({color: "#000000"});
 
 					} else if (scrollBarDisplacement > windowHeight) {
 
-						$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
-						$(".navbarText").css({color: "#000000"});
+						$(navBarId).css({backgroundColor: "#FFFFFF"});
+						$(navBarTextClass).css({color: "#000000"});
 
 					}
 
@@ -78,30 +85,30 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 		enableSecondaryCSS: function(event) {
 			
-			$("#collapsedNavBar").css({visibility: "hidden"});
+			$(navBarCollapsedTabContainer).css({visibility: "hidden"});
 
-			$(NAVBAR_ID).stop(true).fadeOut(50, function() {
+			$(navBarId).stop(true).fadeOut(50, function() {
 
-				$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
+				$(navBarId).css({backgroundColor: "#FFFFFF"});
 
 				switch (event) {
 
 					case "collapse":
 
-						$("#hamburgerCollapseToggle").css({display: "block"});
-						$(".navbarUl").css({display: "none"});
+						$(hamburgerButtonId).css({display: "block"});
+						$(navBarTabsListClass).css({display: "none"});
 
 						break;
 
 					case "scroll":
-
+						
 						break;
 
 				}
 
-				$(".navbarText").css({color: "#000000"});
-				$("#collapsedNavBar").css({visibility: "visible"});
-				$(NAVBAR_ID).stop(true).fadeIn(300);
+				$(navBarTextClass).css({color: "#000000"});
+				$(navBarCollapsedTabContainer).css({visibility: "visible"});
+				$(navBarId).stop(true).fadeIn(300);
 
 			});
 
@@ -109,21 +116,21 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 		disableSecondaryCSS: function(event) {
 
-			$(NAVBAR_ID).stop(true).fadeOut(50, function() {
+			$(navBarId).stop(true).fadeOut(50, function() {
 
 				switch (event) {
 
 					case "collapse":
 
-						$(".navbarUl").css({display: "block"});
-						$("#hamburgerCollapseToggle").css({display: "none"});
+						$(navBarTabsListClass).css({display: "block"});
+						$(hamburgerButtonId).css({display: "none"});
 
 						var windowHeight = $(window).height();
 						var scrollBarDisplacement = $(window).scrollTop();
 
 						if (scrollBarDisplacement < windowHeight) {
-							$(".navbarText").css({color: "#FFFFFF"});
-							$(NAVBAR_ID).css({backgroundColor: "transparent"});
+							$(navBarTextClass).css({color: "#FFFFFF"});
+							$(navBarId).css({backgroundColor: "transparent"});
 						}
 					
 						break;
@@ -133,10 +140,10 @@ angular.module("navBarModule", ["pageLayoutModule"])
 						var windowWidth = $(window).width();
 
 						if (windowWidth < 768) {
-							$(NAVBAR_ID).css({backgroundColor: "#FFFFFF"});
+							$(navBarId).css({backgroundColor: "#FFFFFF"});
 						} else {
-							$(".navbarText").css({color: "#FFFFFF"});
-							$(NAVBAR_ID).css({backgroundColor: "transparent"});
+							$(navBarTextClass).css({color: "#FFFFFF"});
+							$(navBarId).css({backgroundColor: "transparent"});
 						}
 
 						break;
@@ -144,7 +151,7 @@ angular.module("navBarModule", ["pageLayoutModule"])
 				}
 
 				
-				$(NAVBAR_ID).stop(true).fadeIn(300);
+				$(navBarId).stop(true).fadeIn(300);
 
 			});
 						
@@ -152,11 +159,12 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 	};
 
-})
+}])
 
-.factory("navBarCollapsedFactory", ["navBarCSSFactory", function(navBarCSSFactory) {
+.factory("navBarCollapsedFactory", ["navBarCSSFactory", "constantsFactory", function(navBarCSSFactory, constantsFactory) {
 
 	var navBarHorizontal;
+	var hamburgerButtonId = constantsFactory.getHAMBURGER_BUTTON_ID();
 
 	return {
 
@@ -199,7 +207,7 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 					navBarHorizontal = true;
 
-					$("#hamburgerCollapseToggle").css({display: "none"});
+					$(hamburgerButtonId).css({display: "none"});
 
 				}
 
@@ -211,9 +219,12 @@ angular.module("navBarModule", ["pageLayoutModule"])
 
 }])
 
-.factory("navBarScrollFactory", ["navBarCSSFactory", function(navBarCSSFactory) {
+.factory("navBarScrollFactory", ["navBarCSSFactory", "constantsFactory", function(navBarCSSFactory, constantsFactory) {
 
 	var didSurpassWindowHeight;
+	
+	var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBarHeight = parseInt($(navBarId).css("height"));
 
 	return {
 		
@@ -246,8 +257,7 @@ angular.module("navBarModule", ["pageLayoutModule"])
 				var windowWidth = $(window).width();
 				var scrollBarDisplacement = $(document).scrollTop();
 
-				//-1 so set's secondary CSS upon clicking "About"
-				if (scrollBarDisplacement > windowHeight - 1) {
+				if (scrollBarDisplacement > windowHeight - navBarHeight -1) {
 					
 					if (didSurpassWindowHeight === false) {
 

@@ -1,4 +1,4 @@
-angular.module("footerModule", [])
+angular.module("footerModule", ["constantsModule"])
 
 .controller("footerController", ["$scope", "footerResizeFactory", function($scope, footerResizeFactory) {
 
@@ -12,10 +12,10 @@ angular.module("footerModule", [])
 
 }])
 
-.factory("footerResizeFactory", function() {
+.factory("footerResizeFactory", ["constantsFactory", function(constantsFactory) {
 
-	var FOOTER_ID = "#contentContact";
-	var FOOTER_HEIGHT = 167;
+	var footerId = constantsFactory.getFOOTER_ID();
+	var footerHeight = parseInt($(footerId).css("height"));
 
 	return {
 
@@ -24,15 +24,15 @@ angular.module("footerModule", [])
 			var windowWidth = $(window).width();
 
 			if (windowWidth < 768) {
-				var footerHeight = (FOOTER_HEIGHT / 2.0) + "px";
-				$(FOOTER_ID).css({height: footerHeight});
+				var height = (footerHeight / 2.0) + "px";
+				$(footerId).css({height: height});
 			} else {
-				var footerHeight = FOOTER_HEIGHT + "px";
-				$(FOOTER_ID).css({height: footerHeight});
+				var height = footerHeight + "px";
+				$(footerId).css({height: height});
 			}
 
 		}
 
 	}
 
-})
+}])

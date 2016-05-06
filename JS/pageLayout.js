@@ -58,7 +58,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 			var $root = $("html, body");
 
-			$root.animate({
+			$root.stop(true).animate({
 				scrollTop: ($(scrollToElement).offset().top - navBarHeight)
 			}, 600);
 
@@ -94,7 +94,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 		enableHoverCSS: function(element) {
 			
-			$(element).stop(true).animate({color: "#1aa0d6"}, 225);
+			$(element).stop(true).animate({color: "#1AA0D6"}, 225);
 
 		},
 
@@ -105,6 +105,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 				case "navBar":
 
 					var whiteBackground = "rgb(255, 255, 255)";
+					var verticalDisplacement = $(document).scrollTop();
 
 					if ($(navBarId).css("background-color") === whiteBackground) {
 						$(element).stop(true).animate({color: "#000000"}, 225);
@@ -113,14 +114,11 @@ angular.module("pageLayoutModule", ["constantsModule"])
 						//adjust accordingly if still scrolling
 						//TODO: try window.onScroll?
 
-						var verticalDisplacement = $(document).scrollTop();
-
-						if (verticalDisplacement > 550) {
-							$(element).stop(true).animate({color: "#000000"}, 225);
-						} else {
-							//alert(verticalDisplacement);
-							$(element).stop(true).animate({color: "#FFFFFF"}, 225);
-						}
+						 if (verticalDisplacement > 600) {
+						 	$(element).stop(true).animate({color: "#000000"}, 225);
+						 } else {
+						 	$(element).stop(true).animate({color: "#FFFFFF"}, 225);
+						 }
 					
 					}
 	

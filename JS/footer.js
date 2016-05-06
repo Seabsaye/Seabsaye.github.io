@@ -17,6 +17,8 @@ angular.module("footerModule", ["constantsModule"])
 	var footerId = constantsFactory.getFOOTER_ID();
 	var footerHeight = parseInt($(footerId).css("height"));
 
+	var copyrightMargin = document.getElementById("copyrightStatement");
+
 	return {
 
 		setFooterHeight: function() {
@@ -24,11 +26,13 @@ angular.module("footerModule", ["constantsModule"])
 			var windowWidth = $(window).width();
 
 			if (windowWidth < 768) {
-				var height = (footerHeight / 2.0) + "px";
+				var height = (footerHeight / 1.5) + "px";
 				$(footerId).css({height: height});
+				$(copyrightMargin).css({marginTop: "40px"});
 			} else {
 				var height = footerHeight + "px";
 				$(footerId).css({height: height});
+				$(copyrightMargin).css({marginTop: "94px"});
 			}
 
 		}

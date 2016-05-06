@@ -239,8 +239,6 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 						
 					if (scrollBarDisplacement > windowHeight) {
 						didSurpassWindowHeight = true;
-						
-						
 					} else {
 						didSurpassWindowHeight = false;
 					}
@@ -257,7 +255,7 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 				var windowWidth = $(window).width();
 				var scrollBarDisplacement = $(document).scrollTop();
 
-				if (scrollBarDisplacement > windowHeight - navBarHeight -1) {
+				if (scrollBarDisplacement > windowHeight - navBarHeight - 1) {
 					
 					if (didSurpassWindowHeight === false) {
 

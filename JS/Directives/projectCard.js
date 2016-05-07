@@ -33,9 +33,9 @@ angular.module("cardModule", ["pageLayoutModule"])
 	$scope.buttonOnHover = function(buttonIndex) {
 
 		var button = cardButtonInstances[buttonIndex];
-		var OPACITY = "0.04";
+		var opacity = "0.04";
 
-		buttonFactory.upTheOpacity(button, OPACITY);
+		buttonFactory.upTheOpacity(button, opacity);
 
 	};
 

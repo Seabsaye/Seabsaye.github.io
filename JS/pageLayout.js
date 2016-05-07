@@ -1,6 +1,6 @@
 angular.module("pageLayoutModule", ["constantsModule"])
 
-.controller("pageLayoutController", ["$scope", "layoutDimensionsFactory", "constantsFactory", function($scope, layoutDimensionsFactory, constantsFactory) {
+.controller("pageLayoutController", ["$scope", "layoutDimensionsFactory", "constantsFactory", "buttonFactory", function($scope, layoutDimensionsFactory, constantsFactory, buttonFactory) {
 
 	//move to .ready eventually
 	constantsFactory.setCONTENT_HOME_ID("#contentHome");
@@ -13,6 +13,35 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 	layoutDimensionsFactory.instantiateInitialHeight();
 	layoutDimensionsFactory.heightResizeListener();
+
+	var priorElementProperties = {};
+
+
+	$scope.augmentSize = function(elementEvent, sizeMultiplier) {
+		
+		var element = elementEvent.currentTarget;
+		var sizeOriginal;
+		var sizeAugment;
+
+		if (element === priorElementProperties.element) {
+
+			sizeOriginal = priorElementProperties.size;
+			sizeAugment = sizeOriginal * sizeMultiplier;
+
+		} else {			
+
+			sizeOriginal = parseInt($(element).css("fontSize"));
+			sizeAugment = sizeOriginal * sizeMultiplier;
+
+			priorElementProperties.size = sizeOriginal;
+			priorElementProperties.element = element;
+
+		}
+
+		buttonFactory.augmentSize(element, sizeAugment);
+
+	}
+
 
 }])
 
@@ -80,6 +109,10 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 		downTheOpacity: function(element) {
 			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: "0.00"}) }, 225);
+		},
+
+		augmentSize: function(element, size) {
+			$(element).stop(true).animate({fontSize: size}, 225);
 		}
 
 	}

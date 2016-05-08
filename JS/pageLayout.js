@@ -27,6 +27,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	$scope.onLinkHover = function(linkEvent) {
 		var link = linkEvent.currentTarget;
 		var elementType = "contentContainer";
+
 		hyperTextFactory.enableHoverCSS(link, elementType);
 	}
 
@@ -210,7 +211,6 @@ angular.module("pageLayoutModule", ["constantsModule"])
 					$(element).stop(true).animate({color: "#1AA0D6"}, 225);
 					break;
 				case "contentContainer":
-					console.log('ef');
 					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.37}) }, 225);
 					break;
 				default:
@@ -228,15 +228,40 @@ angular.module("pageLayoutModule", ["constantsModule"])
 					var whiteBackground = "rgb(255, 255, 255)";
 					var verticalDisplacement = $(document).scrollTop();
 
-					if ($(navBarId).css("background-color") === whiteBackground) {
-						$(element).stop(true).animate({color: "#000000"}, 225);
+					if ($("#navbar").css("background-color") === whiteBackground) {
+
+						if (element === "#navBarTextName") {
+
+							$(element).stop(true).animate({color: "#000000"}, 225, function() {
+
+								if ($("#navbar").css("background-color") != whiteBackground) {
+									$(element).stop(true).css({color: "#FFFFFF"});
+								}
+
+							});
+
+						} else {
+							$(element).stop(true).animate({color: "#000000"}, 225);
+						}
+
 					} else {
 
 						//adjust accordingly if still scrolling
 						//TODO: try window.onScroll?
 
 						 if (verticalDisplacement > 600) {
-						 	$(element).stop(true).animate({color: "#000000"}, 225);
+						 	$(element).stop(true).animate({color: "#000000"}, 225, function() {
+
+						 		if (element === "#navBarTextName") {
+
+						 			if (verticalDisplacement < 600) {
+
+						 				$(element).stop(true).css({color: "#FFFFFF"});
+						 			}
+
+						 		}
+
+						 	});
 						 } else {
 						 	$(element).stop(true).animate({color: "#FFFFFF"}, 225);
 						 }

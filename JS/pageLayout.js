@@ -232,13 +232,15 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 						if (element === "#navBarTextName") {
 
-							$(element).stop(true).animate({color: "#000000"}, 225, function() {
+							$(element).stop(true).animate({color: "#000000"}, 225);
+
+							setTimeout(function() {
 
 								if ($("#navbar").css("background-color") != whiteBackground) {
 									$(element).stop(true).css({color: "#FFFFFF"});
 								}
 
-							});
+							}, 170);
 
 						} else {
 							$(element).stop(true).animate({color: "#000000"}, 225);

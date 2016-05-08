@@ -100,12 +100,11 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 						break;
 
 					case "scroll":
-						
+						$(navBarTextClass).css({color: "#000000"});
 						break;
 
 				}
-
-				$(navBarTextClass).css({color: "#000000"});
+				$(navBarTextClass).animate({color: "#000000"}, 50);
 				$(navBarCollapsedTabContainer).css({visibility: "visible"});
 				$(navBarId).stop(true).fadeIn(300);
 
@@ -135,7 +134,7 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 						break;
 
 					case "scroll":
-
+						
 						var windowWidth = $(window).width();
 
 						if (windowWidth < 768) {

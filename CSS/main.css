@@ -8,10 +8,6 @@ body {
     -o-font-smoothing: antialiased;
 }
 
-#mainContainer {
-    
-}
-
 .sectionContainer {
     text-align: center;
     background-color: #f2f2f2;
@@ -36,11 +32,12 @@ body {
 }
 
 .homeContactIcon {
+    margin-top: 6px;
     font-size: 20px;
 }
 
 #homeMailIcon {
-    margin: 0px 13.5px;
+    margin: 0px 18px;
 }
 
 #homeArrowDrop {
@@ -89,16 +86,9 @@ body {
     border: 3px solid #000000;
 }
 
-.contentHeader {
-
-
-}
-
 .contentSubHeader {
     margin-bottom: 30px;
 }
-
-
 
 #navbar {
     position: fixed;
@@ -167,17 +157,12 @@ body {
     margin-top: 12px;
 }
 
-.list-group {
-   
-}
-
 .list-group-item:first-child {
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
 
 #collapsableTextContact {
-    
     padding-bottom: 20px;
 }
 
@@ -197,6 +182,11 @@ body {
     color: #FFFFFF;
 }
 
+#contentAbout a {
+    text-decoration: none;
+    color: #1AA0D6;
+}
+
 #sectionAbout {
     position: relative;
     z-index: 1;
@@ -206,11 +196,6 @@ body {
 
 #contentAbout {
     padding: 60px 0px 68px 0px;
-}
-
-
-#sectionProjects {
-
 }
 
 #contentProjects {
@@ -226,20 +211,8 @@ body {
     height: 167px;
 }
 
-#contentContact {
-
-}
-
 .connectSquare {
     display: inline-block;
     border: 1px solid #e4e4e4;
     border-radius: 6px;
-}
-
-.connectSquare:nth-child(2) {
-
-}
-
-#copyrightStatement {
-   
 }

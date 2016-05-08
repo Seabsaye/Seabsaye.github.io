@@ -1,0 +1,245 @@
+body { 
+    font-size: 16px !important; 
+    font-family: 'Open Sans', sans-serif !important;
+
+    /* disable font-weight increase with white background */
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+#mainContainer {
+    
+}
+
+.sectionContainer {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+#sectionHome {
+    background-image: url("../Images/background2-minCopy.jpg"); 
+    background-size: cover;
+}
+
+.contentContainer {
+    /*border: 1px solid red;*/
+    display: inline-block;
+    width: 95%;
+}
+
+#homeTextContainer {
+    display: inline-block;
+    position: relative;
+    top: 40%;
+    color: #FFFFFF;
+}
+
+.homeContactIcon {
+    font-size: 20px;
+}
+
+#homeMailIcon {
+    margin: 0px 13.5px;
+}
+
+#homeArrowDrop {
+    display: block;
+    position: relative;
+    z-index: 0;
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    margin-top: 16%;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+#homeBackground {
+    margin:0;
+    width: 100%;
+}
+
+.midpointColumn {
+    border-bottom: 1px solid blue;
+}
+
+.col-sm-10 {
+    height: 728px;
+}
+
+.col-sm-1 {
+    background-color: dodgerblue;
+    height: 728px;
+}
+
+.stylisticBar {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 0px;
+    width: 40px;
+}
+
+#sectionAbout .stylisticBar {
+    border: 3px solid #FFFFFF;
+}
+
+#sectionProjects .stylisticBar {
+    border: 3px solid #000000;
+}
+
+.contentHeader {
+
+
+}
+
+.contentSubHeader {
+    margin-bottom: 30px;
+}
+
+
+
+#navbar {
+    position: fixed;
+    z-index: 10;
+    /*margin-left: 2.5%;
+    width: 95%;*/
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+#navbar p {
+    display: inline-block;
+}
+
+.navBarTabsList {
+    width: 60%;
+    text-align: right;
+    list-style: none;
+    float: right;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbarElement {
+    display: inline-block;
+    margin: 0px 12px;
+    height: 32px;
+}
+
+.navbarElement a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.navBarText {
+    margin: 14px 0px 0px 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.navBarText:first-child {
+    margin-left: 12px;
+}
+
+#hamburgerCollapseToggle {
+    border-radius: 6px;
+    float: right;
+    position: relative;
+    border: 1px solid #e6e6e6;
+    display: inline-block;
+    text-align: center;
+    width: 45px;
+    height: 30px;
+    margin: 9px 12px 9px 0px;
+    cursor: pointer;
+    display: none;
+}
+
+#hamburgerIcon {
+    margin-top: 13%;
+}
+
+#collapsedNavBarTabContainer {
+    margin-top: 12px;
+}
+
+.list-group {
+   
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+#collapsableTextContact {
+    
+    padding-bottom: 20px;
+}
+
+.list-group-item {
+    border: none !important;
+    background-color: rgba(255,255,255,1) !important;
+    cursor: pointer;
+}
+
+.list-group-item a:link, .list-group-item a:hover, .list-group-item a:visited, .list-group-item a, #contentContact a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#homeTextContainer a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#sectionAbout {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(16,13,25); /*31322e*/
+    color: #FFFFFF;
+}
+
+#contentAbout {
+    padding: 60px 0px 68px 0px;
+}
+
+
+#sectionProjects {
+
+}
+
+#contentProjects {
+    padding-bottom: 12px;
+}
+
+.contentProjectsText {
+    padding-top: 17px;
+}
+
+#sectionContact {
+    background-color: #FFFFFF;
+    height: 167px;
+}
+
+#contentContact {
+
+}
+
+.connectSquare {
+    display: inline-block;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+}
+
+.connectSquare:nth-child(2) {
+
+}
+
+#copyrightStatement {
+   
+}

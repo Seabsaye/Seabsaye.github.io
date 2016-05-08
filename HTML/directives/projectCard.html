@@ -1,0 +1,14 @@
+<div class="cardFrame" ng-controller="cardController">
+	<div class="imageContainer">
+		<img ng-src="{{cardProperties.image}}" style="{{cardProperties.imgStyle}}"/>
+	</div>
+	<div class="restContainer">
+		<h2 class="cardTitle">{{cardProperties.title}}</h2>
+		<p class="cardDescription">{{cardProperties.description}}</p>
+		<a ng-href="{{cardProperties.link}}" target="_blank">
+			<div class="cardButton" ng-mouseover="buttonOnHover(cardProperties.buttonIndex)" ng-mouseleave="buttonOffHover(cardProperties.buttonIndex)">
+				<h4 class="cardButtonPrompt">{{cardProperties.button}}</h4>
+			</div>
+		</a>
+	</div>
+</div>

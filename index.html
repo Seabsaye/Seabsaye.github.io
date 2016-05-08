@@ -1,92 +1,137 @@
-<!doctype html>
+<!DOCTYPE HTML>
 
-<html>
-
+<html ng-app="siteModule">
+    
     <head>
         
-        <link type="text/css" rel="stylesheet" href="style.css"/>
-        <title>Sebastian Kolosa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <!-- css-frameworks -->
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <!-- /css-frameworks --> 
+
+        <!-- fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Hind+Siliguri|Catamaran|Yantramanav|Poppins|Ramabhadra|Comfortaa|Sarala|Work+Sans|Michroma|Asap|Khula|Open Sans|Stint Ultra' rel='stylesheet' type='text/css'>
+        <!-- /fonts -->
+
+        <!-- css -->
+        <link type="test/css" rel="stylesheet" href="CSS/main.css"/>
+        <link type="text/css" rel="stylesheet" href="CSS/directives/projectCard.css"/>
+        <!-- /css -->
+
+        <!-- js-frameworks -->
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="JS/plugins/jquery-color/jquery.color.js"></script>
+        <!-- /js-frameworks -->
+
+        <!-- scripts -->
+        <script src="JS/Modules/module.js"></script>
+        <script src="JS/Directives/projectCard.js"></script>
+        <script src="JS/constants.js"></script>
+        <script src="JS/pageLayout.js"></script>
+        <script src="JS/navBar.js"></script>
+        <script src="JS/footer.js"></script>
+        <!-- /scripts -->
+
+        <title>sebastian kolosa</title>
         
     </head>
-    
-    <body>
+
+    <body ng-controller="pageLayoutController">
         
-        <header>
-            <div id="Introduction">
-                <p id="name">Sebastian Kolosa</p>
-                <p class="inhabitance">Systems Design Engineering</p>
-                <p class="inhabitance">|</p>
-                <p class="inhabitance">University of Waterloo</p>
+        <div id="navbar" ng-controller="navBarController">
+            <p class="navBarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>
+            <ul class="navBarTabsList">
+                <li class="navbarElement">
+                    <a class="navBarText" id="navBarTextResume" href="" ng-mouseover="onLinkHover('#navBarTextResume')" ng-mouseleave="offLinkHover('#navBarTextResume')">Resume</a>
+                </li>
+                <li class="navbarElement">
+                    <p class="navBarText" id="navBarTextAbout" ng-click="scrollTo('#sectionAbout')" ng-mouseover="onLinkHover('#navBarTextAbout')" ng-mouseleave="offLinkHover('#navBarTextAbout')">About</p>
+                </li>
+                <li class="navbarElement">
+                    <p class="navBarText" id="navBarTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#navBarTextProjects')" ng-mouseleave="offLinkHover('#navBarTextProjects')">Projects</p>
+                </li>
+                <li class="navbarElement">
+                    <p class="navBarText" id="navBarTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#navBarTextContact')" ng-mouseleave="offLinkHover('#navBarTextContact')">Contact</p>
+                </li>
+            </ul>
+        
+            <div id="hamburgerCollapseToggle" data-toggle="collapse" aria-expanded="false" data-target="#collapsedNavBarTabContainer" aria-controls="collapsedNavBarTabContainer" ng-mouseover="onHamburgerHover()" ng-mouseleave="offHamburgerHover()">
+                <span class="glyphicon glyphicon-menu-hamburger" id="hamburgerIcon"></span>
             </div>
-        </header>
-        <div class="Home"> 
-            <div class="navbar"> 
+            <div class="panel-collapse collapse hidden-sm hidden-md hidden-lg" id="collapsedNavBarTabContainer" aria-labelledby="hamburgerCollapseToggle">
+                <ul class="list-group">
+                    <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume a')" ng-mouseleave="offLinkHover('#collapsableTextResume a')"><a>Resume</a></li>
+                    <li class="list-group-item" id="collapsableTextAbout" ng-click="scrollTo('#sectionAbout')" ng-mouseover="onLinkHover('#collapsableTextAbout')" ng-mouseleave="offLinkHover('#collapsableTextAbout')">About</li>
+                    <li class="list-group-item" id="collapsableTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#collapsableTextProjects')" ng-mouseleave="offLinkHover('#collapsableTextProjects')">Projects</li>
+                    <li class="list-group-item" id="collapsableTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#collapsableTextContact')" ng-mouseleave="offLinkHover('#collapsableTextContact')">Contact</li>
                 <ul>
-                    <a href="#main">
-                        <li>Home</li>
-                    </a>
-                    <a href="Resume/Software Resume New.pdf">
-                        <li>R&eacute;sum&eacute;</li>
-                    </a>
-                    <a href="#project">
-                        <li>Projects</li>
-                    </a>
-                    <a href="https://github.com/Seabsaye">
-                        <li>Github</li>
-                    </a>
-                    <a href="#contact">    
-                        <li>Contact</li>
-                    </a>
-                </ul>
             </div>
-            <div id="main">  
-                <div class="main">
-                    <div class="title">
-                        <h1>Myself</h1>
-                    </div>
-                    <div class="big_content">
-                        <div id="portrait_container">
-                            <img id="portrait" src="IMG_1238a.jpg"/>
-                        </div>
-                        <div class="content">
-                            <div class="content" id="myself_inner">
-                                <p class="inner_paragraph">Sebastian Kolosa (n):</p>
-                                <p class="inner_paragraph"><span style="display: inline-block; width: 30px;"></span>Individual who appreciates a hearty combination of Disclosure, Coldplay, and Malcolm Gladwell whenever he isn't (and is) pursueing a growing passion within the inception of original hardware and software.</p>
-                            </div>
-                        </div>   
-                    </div>
-                </div>
-            </div> 
-            <div id="project">
-                <div class="main">
-                    <div class="title">
-                        <h1>The Aquavest</h1>
-                    </div>
-                    <div class="big_content">
-                        <div id="video_container"> 
-                            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/KAUhvNvnUiw?rel=0" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="vest_content">
-                            <div class="vest_content" id="projects_inner">
-                                <p class="inner_paragraph">Developed to combat the consequenses associated with current methods of water collection within Sub-Saharan Africa, the Aquavest is a "vest-like" water-carrying apparatus. Now a finished product as of the completion of the high-fidelity design, the Aquavest has succeeded in meeting and surpassing goals such as minimizing the physical strain experienced by the user, decreasing levels of contaminents in the water collected, and increasing user mobility, effectively rendering a majority of the negatives corresponding with water collection in this region as non-existent.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="contact">
-                <div class="main">
-                    <div class="title">
-                        <h1>Contact</h1>
-                    </div>
-                    <div class="big_content">
-                        <img id="contact_info" src="Website_Contact_Info.png"/>
-                        <!-- "for 'bot negation' purposes" -->
-                    </div>
-                </div>
-            </div>  
         </div>
-    
+        <div id="mainContainer">
+            <div class="sectionContainer" id="sectionHome">
+                <!--<img id="homeBackground" src="Images/background2-min.jpg"/>-->
+                <div class="contentContainer" id="contentHome">
+                    <div id="homeTextContainer" ng-controller="arrowDropController">
+                        <h2>SEBASTIAN KOLOSA</h2>
+                        <p>Student | Designer | Engineer</p>
+                        <a href="https://github.com/Seabsaye" target="_blank">
+                            <i class="fa fa-github-alt homeContactIcon"></i>
+                        </a>
+                        <a href="mailto:sebastian.kolosa@gmail.com" target="_blank">
+                            <i class="fa fa-envelope homeContactIcon" id="homeMailIcon"></i>
+                        </a>
+                        <a href="https://ca.linkedin.com/in/sebastian-kolosa-20236b113" target="_blank">
+                            <i class="fa fa-linkedin homeContactIcon"></i>
+                        </a>
+                        <i class="fa fa-angle-double-down" id="homeArrowDrop" ng-click="scrollTo('#sectionAbout')" ng-mouseover="augmentPosition($event, 'vertical', '5')" ng-mouseleave="augmentPosition($event, 'vertical', '0')"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="sectionContainer" id="sectionAbout">
+                <div class="contentContainer" id="contentAbout">
+                    <h2 class="contentHeader">ABOUT ME</h2>
+                    <div class="stylisticBar"></div>
+                    <h4 class="contentSubHeader">A couple words.</h4>
+                    <p>Hey! My name is Sebastian Kolosa, and I'm a Systems Design Engineering student at the University of Waterloo. I would define myself as a curious life-long learner who has a growing interest in the fields of software and technology coupled with an already deep-rooted gravitation towards the design process.</p>
+                </div>
+            </div>
+            <div class="sectionContainer" id="sectionProjects">
+                <div class="contentContainer" id="contentProjects" ng-controller="cardController">
+                    <div class="contentProjectsText">   
+                        <h2 class="contentHeader">PROJECTS</h2>
+                        <div class="stylisticBar"></div>
+                        <h4 class="contentSubHeader">Things I've worked on recently.</h4>
+                    </div>
+                    <project-card ng-repeat="project in projects" type="project" ></project-card>
+                </div>
+            </div>
+            <div class="sectionContainer" id="sectionContact" ng-controller="footerController">
+                <div class="contentContainer" id="contentContact">
+                    <a href="https://github.com/Seabsaye" target="_blank">
+                        <div class="connectSquare" ng-mouseover="buttonOnHover($event)" ng-mouseleave="buttonOffHover($event)">
+                            <i class="fa fa-github-alt"></i>
+                        </div>
+                    </a>
+                    <a href="mailto:sebastian.kolosa@gmail.com" target="_blank">
+                        <div class="connectSquare" ng-mouseover="buttonOnHover($event)" ng-mouseleave="buttonOffHover($event)">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </a>
+                    <a href="https://ca.linkedin.com/in/sebastian-kolosa-20236b113" target="_blank">
+                        <div class="connectSquare" ng-mouseover="buttonOnHover($event)" ng-mouseleave="buttonOffHover($event)"> 
+                            <i class="fa fa-linkedin"></i>
+                        </div>
+                    </a>
+
+                    <h6 id="copyrightStatement">Copyright &copy 2016 Sebastian Kolosa</h6>
+                </div>
+            </div>
+        </div>
+      
     </body>
 
 </html>

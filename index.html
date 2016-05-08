@@ -75,7 +75,7 @@
             <div class="sectionContainer" id="sectionHome">
                 <!--<img id="homeBackground" src="Images/background2-min.jpg"/>-->
                 <div class="contentContainer" id="contentHome">
-                    <div id="homeTextContainer" ng-controller="arrowDropController">
+                    <div id="homeTextContainer" ng-controller="scrollController">
                         <h2>SEBASTIAN KOLOSA</h2>
                         <p>Student | Designer | Engineer</p>
                         <a href="https://github.com/Seabsaye" target="_blank">
@@ -92,11 +92,11 @@
                 </div>
             </div>
             <div class="sectionContainer" id="sectionAbout">
-                <div class="contentContainer" id="contentAbout">
+                <div class="contentContainer" id="contentAbout" ng-controller="scrollController">
                     <h2 class="contentHeader">ABOUT ME</h2>
                     <div class="stylisticBar"></div>
                     <h4 class="contentSubHeader">A couple words.</h4>
-                    <p>Hey! My name is Sebastian Kolosa, and I'm a Systems Design Engineering student at the University of Waterloo. I would define myself as a curious life-long learner who has a growing interest in the fields of software and technology coupled with an already deep-rooted gravitation towards the design process.</p>
+                    <p>Hey! My name is Sebastian Kolosa, and I'm a <a href="https://uwaterloo.ca/systems-design-engineering/" target="_blank" ng-mouseover="onLinkHover($event)" ng-mouseleave="offLinkHover($event)">Systems Design Engineering</a> student at the University of Waterloo. I would define myself as a curious life-long learner who has a growing interest in the fields of <a href="" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover($event)" ng-mouseleave="offLinkHover($event)">software and technology</a> coupled with an already deep-rooted gravitation towards the design process.</p>
                 </div>
             </div>
             <div class="sectionContainer" id="sectionProjects">

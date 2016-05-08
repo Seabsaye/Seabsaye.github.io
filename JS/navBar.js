@@ -30,14 +30,13 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 	}
 
 	$scope.onLinkHover = function(link) {
-		hyperTextFactory.enableHoverCSS(link);
+		var elementType = "navBar";
+		hyperTextFactory.enableHoverCSS(link, elementType);
 	}
 
 	$scope.offLinkHover = function(link) {
-
 		var elementType = "navBar";
 		hyperTextFactory.disableHoverCSS(link, elementType);
-
 	}
 
 }])

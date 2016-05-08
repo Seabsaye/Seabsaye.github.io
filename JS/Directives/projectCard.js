@@ -16,7 +16,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 
 	$scope.pixelbot = {
 
-		title: "pixelbot", image: "Images/pixelbotLogo3.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "VISIT SITE", link: "http://www.hellopixelbot.com", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
+		title: "Pixelbot", image: "Images/pixelbotLogo3.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "VISIT SITE", link: "http://www.hellopixelbot.com", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
 
 	}
 

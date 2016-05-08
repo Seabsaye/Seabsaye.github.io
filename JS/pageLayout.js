@@ -1,6 +1,6 @@
 angular.module("pageLayoutModule", ["constantsModule"])
 
-.controller("pageLayoutController", ["$scope", "layoutDimensionsFactory", "constantsFactory", "buttonFactory", function($scope, layoutDimensionsFactory, constantsFactory, buttonFactory) {
+.controller("pageLayoutController", ["$scope", "layoutDimensionsFactory", "constantsFactory", "buttonFactory", "hyperTextFactory", function($scope, layoutDimensionsFactory, constantsFactory, buttonFactory, hyperTextFactory) {
 
 	//move to .ready eventually
 	constantsFactory.setCONTENT_HOME_ID("#contentHome");
@@ -24,10 +24,22 @@ angular.module("pageLayoutModule", ["constantsModule"])
 		buttonFactory.augmentPosition(element, direction, displacement);
 	}
 
+	$scope.onLinkHover = function(linkEvent) {
+		var link = linkEvent.currentTarget;
+		var elementType = "contentContainer";
+		hyperTextFactory.enableHoverCSS(link, elementType);
+	}
+
+	$scope.offLinkHover = function(linkEvent) {
+		var link = linkEvent.currentTarget;
+		var elementType = "contentContainer";
+		hyperTextFactory.disableHoverCSS(link, elementType);
+	}
+
 
 }])
 
-.controller("arrowDropController", ["$scope", "triggerScrollFactory", function($scope, triggerScrollFactory) {
+.controller("scrollController", ["$scope", "triggerScrollFactory", function($scope, triggerScrollFactory) {
 
 	$scope.scrollTo = function(scrollToElement) {
 		triggerScrollFactory.navBarScroll(scrollToElement);
@@ -69,11 +81,19 @@ angular.module("pageLayoutModule", ["constantsModule"])
 .factory("triggerScrollFactory", ["constantsFactory", function(constantsFactory) {
 
 	var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBarCollapsed = constantsFactory.getNAVBAR_COLLAPSED_TAB_CONTAINER_ID();
+	var hamburgerButtonId = constantsFactory.getHAMBURGER_BUTTON_ID();
 	var navBarHeight = parseInt($(navBarId).css("height"));
 
 	return {
 
 		navBarScroll: function(scrollToElement) {
+			
+			var isExpanded = $(hamburgerButtonId).attr("aria-expanded");
+			
+			if (isExpanded == "true") {
+				$(navBarCollapsed).collapse("hide");
+			}
 
 			var $root = $("html, body");
 
@@ -183,9 +203,19 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 	return {
 
-		enableHoverCSS: function(element) {
+		enableHoverCSS: function(element, elementType) {
 			
-			$(element).stop(true).animate({color: "#1AA0D6"}, 225);
+			switch (elementType) {
+				case "navBar":
+					$(element).stop(true).animate({color: "#1AA0D6"}, 225);
+					break;
+				case "contentContainer":
+					console.log('ef');
+					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.37}) }, 225);
+					break;
+				default:
+					console.log("unrecognized elementType");
+			}
 
 		},
 
@@ -217,9 +247,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 
 				case "contentContainer":
-
-
-
+					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.45}) }, 225);
 					break;
 
 			}

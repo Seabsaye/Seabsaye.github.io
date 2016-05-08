@@ -18,7 +18,7 @@ body {
 }
 
 #sectionHome {
-    background-image: url("../Images/background.jpg"); 
+    background-image: url("../Images/background2-minCopy.jpg"); 
     background-size: cover;
 }
 
@@ -32,7 +32,6 @@ body {
     display: inline-block;
     position: relative;
     top: 40%;
-    font-family: 'Open Sans';
     color: #FFFFFF;
 }
 
@@ -46,9 +45,12 @@ body {
 
 #homeArrowDrop {
     display: block;
-    width: 40px;
+    position: relative;
+    z-index: 0;
+    width: 32px;
+    height: 32px;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 16%;
     font-size: 36px;
     cursor: pointer;
 }
@@ -76,13 +78,27 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     height: 0px;
-    border: 3px solid #FFFFFF;
     width: 40px;
 }
 
-.subHeader {
+#sectionAbout .stylisticBar {
+    border: 3px solid #FFFFFF;
+}
+
+#sectionProjects .stylisticBar {
+    border: 3px solid #000000;
+}
+
+.contentHeader {
+
+
+}
+
+.contentSubHeader {
     margin-bottom: 30px;
 }
+
+
 
 #navbar {
     position: fixed;
@@ -182,20 +198,27 @@ body {
 }
 
 #sectionAbout {
+    position: relative;
+    z-index: 1;
     background-color: rgb(16,13,25); /*31322e*/
+    color: #FFFFFF;
 }
 
 #contentAbout {
-    padding: 60px 0px;
-    color: #FFFFFF;
+    padding: 60px 0px 68px 0px;
 }
+
 
 #sectionProjects {
 
 }
 
 #contentProjects {
-    padding-bottom: 0px;
+    padding-bottom: 12px;
+}
+
+.contentProjectsText {
+    padding-top: 17px;
 }
 
 #sectionContact {

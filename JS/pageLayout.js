@@ -14,36 +14,26 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	layoutDimensionsFactory.instantiateInitialHeight();
 	layoutDimensionsFactory.heightResizeListener();
 
-	var priorElementProperties = {};
-
-
 	$scope.augmentSize = function(elementEvent, sizeMultiplier) {
-		
 		var element = elementEvent.currentTarget;
-		var sizeOriginal;
-		var sizeAugment;
+		buttonFactory.augmentSize(element, sizeMultiplier);
+	}
 
-		if (element === priorElementProperties.element) {
-
-			sizeOriginal = priorElementProperties.size;
-			sizeAugment = sizeOriginal * sizeMultiplier;
-
-		} else {			
-
-			sizeOriginal = parseInt($(element).css("fontSize"));
-			sizeAugment = sizeOriginal * sizeMultiplier;
-
-			priorElementProperties.size = sizeOriginal;
-			priorElementProperties.element = element;
-
-		}
-
-		buttonFactory.augmentSize(element, sizeAugment);
-
+	$scope.augmentPosition = function(elementEvent, direction, displacement) {
+		var element = elementEvent.currentTarget;
+		buttonFactory.augmentPosition(element, direction, displacement);
 	}
 
 
 }])
+
+.controller("arrowDropController", ["$scope", "triggerScrollFactory", function($scope, triggerScrollFactory) {
+
+	$scope.scrollTo = function(scrollToElement) {
+		triggerScrollFactory.navBarScroll(scrollToElement);
+	}
+
+}]) 
 
 .factory("layoutDimensionsFactory", ["constantsFactory", function(constantsFactory) {
 	
@@ -101,6 +91,8 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 .factory("buttonFactory", function() {
 
+	var priorElementProperties = {};
+
 	return {
 
 		upTheOpacity: function(element, alpha) {
@@ -111,8 +103,74 @@ angular.module("pageLayoutModule", ["constantsModule"])
 			$(element).stop(true).animate({backgroundColor: jQuery.Color({alpha: "0.00"}) }, 225);
 		},
 
-		augmentSize: function(element, size) {
-			$(element).stop(true).animate({fontSize: size}, 225);
+		augmentSize: function(element, sizeMultiplier) {
+
+			var sizeOriginal;
+			var sizeAugment;
+
+			if (element === priorElementProperties.sizeElement) {
+
+				sizeOriginal = priorElementProperties.size;
+				sizeAugment = sizeOriginal * sizeMultiplier;
+
+			} else {			
+
+				sizeOriginal = parseInt($(element).css("fontSize"));
+				sizeAugment = sizeOriginal * sizeMultiplier;
+
+				priorElementProperties.size = sizeOriginal;
+				priorElementProperties.sizeElement = element;
+
+			}
+
+			$(element).animate({fontSize: sizeAugment}, 225);
+
+		},
+
+		augmentPosition: function(element, direction, displacement) {
+
+			var positionOriginal;
+			var positionAugment;
+
+			var displacementDirection;
+
+			$(element).css({position: "relative"});
+
+			switch (direction) {
+
+				case "vertical":
+					displacementDirection = "top";
+					break;
+				case "horizontal":
+					displacementDirection = "left";
+					break;
+				default:
+					console.log("invalid direction parameter");
+
+			}
+
+			//if element newly scrolled on
+			if (element != priorElementProperties.positionElement) {
+
+				if ($(element).css(displacementDirection) === "auto") {
+					positionOriginal = 0;
+				} else {
+					positionOriginal = parseInt($(element).css(displacementDirection));
+				}
+			
+				priorElementProperties.position = positionOriginal;
+				priorElementProperties.positionElement = element;
+
+			}
+
+			positionAugment = priorElementProperties.position + displacement + "px";
+
+			var displacementObject = {};
+	
+			displacementObject[displacementDirection] = positionAugment; 
+
+			$(element).stop(true).animate(displacementObject);
+
 		}
 
 	}

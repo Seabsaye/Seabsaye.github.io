@@ -53,7 +53,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	return {
 
 		restrict: "E",
-		templateUrl: "html/directives/projectCard.html",
+		templateUrl: "html/Directives/projectCard.html",
 		scope: {
 			cardProperties: "=type"
 		}

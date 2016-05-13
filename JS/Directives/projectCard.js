@@ -4,19 +4,19 @@ angular.module("cardModule", ["pageLayoutModule"])
 
 	$scope.arkParadigm = {
 
-		title: "Ark Paradigm", image: "Images/arkParadigmLogoTitle.png", description: "Developed startup's website using HTML5, CSS3, AngularJS, jQuery, MySQL, and Python.", button: "CHECK IT OUT", link: "http://arkParadigm.com", buttonIndex: 0, imgStyle: "margin-top: 22%"
+		title: "Ark Paradigm", image: "images/arkParadigmLogoTitle.png", description: "Developed startup's website using HTML5, CSS3, AngularJS, jQuery, MySQL, and Python.", button: "CHECK IT OUT", link: "http://arkParadigm.com", buttonIndex: 0, imgStyle: "margin-top: 22%"
 
 	};
 
 	$scope.joinmi = {
 
-		title: "Joinmi", image: "Images/joinmiLogo.svg", description: "App that streamlines impomptue get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", button: "CHECK IT OUT", link: "http://devpost.com/software/joinmi", buttonIndex: 1, imgStyle: "margin-top: 12%"
+		title: "Joinmi", image: "images/joinmiLogo.svg", description: "App that streamlines impomptue get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", button: "CHECK IT OUT", link: "http://devpost.com/software/joinmi", buttonIndex: 1, imgStyle: "margin-top: 12%"
 
 	}
 
 	$scope.pixelbot = {
 
-		title: "Pixelbot", image: "Images/pixelbotLogo3.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "VISIT SITE", link: "http://www.hellopixelbot.com", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
+		title: "Pixelbot", image: "images/pixelbotLogo.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "VISIT SITE", link: "http://www.hellopixelbot.com", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
 
 	}
 
@@ -53,7 +53,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	return {
 
 		restrict: "E",
-		templateUrl: "HTML/directives/projectCard.html",
+		templateUrl: "html/directives/projectCard.html",
 		scope: {
 			cardProperties: "=type"
 		}

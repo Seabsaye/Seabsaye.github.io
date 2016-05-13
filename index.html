@@ -5,40 +5,40 @@
     <head>
         
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
 
         <!-- favicon -->
-        <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
         <!-- /favicon -->
         
         <!-- css-frameworks -->
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
         <!-- /css-frameworks --> 
 
         <!-- fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Hind+Siliguri|Catamaran|Yantramanav|Poppins|Ramabhadra|Comfortaa|Sarala|Work+Sans|Michroma|Asap|Khula|Open Sans|Stint Ultra' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'/>
         <!-- /fonts -->
 
         <!-- css -->
-        <link type="text/css" rel="stylesheet" href="CSS/main.css"/>
-        <link type="text/css" rel="stylesheet" href="CSS/directives/projectCard.css"/>
+        <link type="text/css" rel="stylesheet" href="css/main/main.css"/>
+        <link type="text/css" rel="stylesheet" href="css/directives/projectCard.css"/>
         <!-- /css -->
 
         <!-- js-frameworks -->
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="JS/plugins/jquery.color.js"></script>
+        <script src="js/plugins/jquery.color.js"></script>
         <!-- /js-frameworks -->
 
         <!-- scripts -->
-        <script src="JS/Modules/module.js"></script>
-        <script src="JS/Directives/projectCard.js"></script>
-        <script src="JS/constants.js"></script>
-        <script src="JS/pageLayout.js"></script>
-        <script src="JS/navBar.js"></script>
-        <script src="JS/footer.js"></script>
+        <script src="js/modules/module.js"></script>
+        <script src="js/Directives/projectCard.js"></script>
+        <script src="js/pageComponents/constants.js"></script>
+        <script src="js/pageComponents/pageLayout.js"></script>
+        <script src="js/pageComponents/navBar.js"></script>
+        <script src="js/pageComponents/footer.js"></script>
         <!-- /scripts -->
 
         <title>sebastian kolosa</title>
@@ -46,12 +46,12 @@
     </head>
 
     <body ng-controller="pageLayoutController">
-        
+
         <div id="navbar" ng-controller="navBarController">
             <p class="navBarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>
             <ul class="navBarTabsList">
                 <li class="navbarElement">
-                    <a class="navBarText" id="navBarTextResume" href="" ng-mouseover="onLinkHover('#navBarTextResume')" ng-mouseleave="offLinkHover('#navBarTextResume')">Resume</a>
+                    <a class="navBarText" id="navBarTextResume" href="resume/resume.pdf" ng-mouseover="onLinkHover('#navBarTextResume')" ng-mouseleave="offLinkHover('#navBarTextResume')">Resume</a>
                 </li>
                 <li class="navbarElement">
                     <p class="navBarText" id="navBarTextAbout" ng-click="scrollTo('#sectionAbout')" ng-mouseover="onLinkHover('#navBarTextAbout')" ng-mouseleave="offLinkHover('#navBarTextAbout')">About</p>
@@ -69,7 +69,7 @@
             </div>
             <div class="panel-collapse collapse hidden-sm hidden-md hidden-lg" id="collapsedNavBarTabContainer" aria-labelledby="hamburgerCollapseToggle">
                 <ul class="list-group">
-                    <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume a')" ng-mouseleave="offLinkHover('#collapsableTextResume a')"><a>Resume</a></li>
+                    <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume a')" ng-mouseleave="offLinkHover('#collapsableTextResume a')"><a href="resume/resume.pdf">Resume</a></li>
                     <li class="list-group-item" id="collapsableTextAbout" ng-click="scrollTo('#sectionAbout')" ng-mouseover="onLinkHover('#collapsableTextAbout')" ng-mouseleave="offLinkHover('#collapsableTextAbout')">About</li>
                     <li class="list-group-item" id="collapsableTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#collapsableTextProjects')" ng-mouseleave="offLinkHover('#collapsableTextProjects')">Projects</li>
                     <li class="list-group-item" id="collapsableTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#collapsableTextContact')" ng-mouseleave="offLinkHover('#collapsableTextContact')">Contact</li>
@@ -135,7 +135,7 @@
                 </div>
             </div>
         </div>
-      
+
     </body>
 
 </html>

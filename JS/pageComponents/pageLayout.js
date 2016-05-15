@@ -201,6 +201,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 .factory("hyperTextFactory", ["constantsFactory", function(constantsFactory) { 
 
 	var navBarId = constantsFactory.getNAVBAR_ID();
+	var collapsedNavBarTextResume = document.getElementById("collapsableTextResume");
 
 	return {
 
@@ -208,8 +209,26 @@ angular.module("pageLayoutModule", ["constantsModule"])
 			
 			switch (elementType) {
 				case "navBar":
-					$(element).stop(true).animate({color: "#1AA0D6"}, 225);
+
+					Modernizr.on("pointerEvents", function(result) {
+
+		                if (!result) {
+		                    $(element).stop(true).animate({color: "#1AA0D6"}, 225);
+
+							//reverts text colour of "Resume" in collapsable back to #000000 upon hovering onto other tabs
+							if (element != collapsedNavBarTextResume) {
+
+								if ($(collapsedNavBarTextResume).css("color") === "rgb(26, 160, 214)") {
+									$(collapsedNavBarTextResume).animate({color: "#000000"}, 225);
+								}
+
+							}
+		                } 
+
+	            	})
+
 					break;
+
 				case "contentContainer":
 					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.37}) }, 225);
 					break;
@@ -253,7 +272,6 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 						$(element).stop(true).animate({color: "#FFFFFF"}, 225);
 						 
-					
 					}
 	
 					break;

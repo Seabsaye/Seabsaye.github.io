@@ -201,7 +201,9 @@ angular.module("pageLayoutModule", ["constantsModule"])
 .factory("hyperTextFactory", ["constantsFactory", function(constantsFactory) { 
 
 	var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBarTextResume = document.getElementById("navBarTextResume");
 	var collapsedNavBarTextResume = document.getElementById("collapsableTextResume");
+	var windowWidth = $(window).width();
 
 	return {
 
@@ -212,11 +214,26 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 					$(element).stop(true).animate({color: "#1AA0D6"}, 225);
 
-					//reverts text colour of "Resume" in collapsable back to #000000 upon hovering onto other tabs
-					if (element != collapsedNavBarTextResume) {
+					if (windowWidth < 768) {
 
-						if ($(collapsedNavBarTextResume).css("color") === "rgb(26, 160, 214)") {
-							$(collapsedNavBarTextResume).animate({color: "#000000"}, 225);
+						//reverts text colour of "Resume" in collapsable back to #000000 upon hovering onto other tabs
+						if (element != collapsedNavBarTextResume) {
+
+							if ($(collapsedNavBarTextResume).css("color") === "rgb(26, 160, 214)") {
+								$(collapsedNavBarTextResume).animate({color: "#000000"}, 225);
+							}
+
+						}
+
+					} else {
+
+						//reverts text colour of "Resume" in nav bar back to #FFFFFF upon hovering onto other tabs
+						if (element != navBarTextResume) {
+
+							if ($(navBarTextResume).css("color") === "rgb(26, 160, 214)") {
+								$(navBarTextResume).animate({color: "#FFFFFF"}, 225);
+							}
+
 						}
 
 					}

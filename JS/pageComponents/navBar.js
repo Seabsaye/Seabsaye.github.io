@@ -3,6 +3,8 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 .controller("navBarController", ["$scope", "constantsFactory", "navBarCSSFactory", "navBarCollapsedFactory", "navBarScrollFactory", "buttonFactory", "triggerScrollFactory", "hyperTextFactory", function($scope, constantsFactory, navBarCSSFactory, navBarCollapsedFactory, navBarScrollFactory, buttonFactory, triggerScrollFactory, hyperTextFactory) {
 
 	var hamburgerButtonId = constantsFactory.getHAMBURGER_BUTTON_ID();
+	var navBarCollapsedTabContainerId = constantsFactory.getNAVBAR_COLLAPSED_TAB_CONTAINER_ID();
+	var collapsedNavBarTextResume = document.getElementById("collapsableTextResume");
 
 	navBarCSSFactory.initialCSS();
 
@@ -38,6 +40,11 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 		var elementType = "navBar";
 		hyperTextFactory.disableHoverCSS(link, elementType);
 	}
+
+	//mobile fix: reverts text colour of "Resume" in collapsable back to #000000 upon collapse completion
+	$(navBarCollapsedTabContainerId).on('hidden.bs.collapse', function () {
+		$(collapsedNavBarTextResume).css({color: "#000000"});
+	})
 
 }])
 
@@ -222,6 +229,7 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 	var didSurpassWindowHeight;
 	
 	var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBarTextClass = document.getElementsByClassName("navBarText");
 	var navBarHeight = parseInt($(navBarId).css("height"));
 
 	return {

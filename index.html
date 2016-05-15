@@ -69,7 +69,9 @@
             </div>
             <div class="panel-collapse collapse hidden-sm hidden-md hidden-lg" id="collapsedNavBarTabContainer" aria-labelledby="hamburgerCollapseToggle">
                 <ul class="list-group">
-                    <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume a')" ng-mouseleave="offLinkHover('#collapsableTextResume a')"><a href="Resume/Resume.pdf">Resume</a></li>
+                    <a href="Resume/Resume.pdf">
+                        <li class="list-group-item" id="collapsableTextResume" ng-mouseover="onLinkHover('#collapsableTextResume')" ng-mouseleave="offLinkHover('#collapsableTextResume')">Resume</li>
+                    </a>
                     <li class="list-group-item" id="collapsableTextAbout" ng-click="scrollTo('#sectionAbout')" ng-mouseover="onLinkHover('#collapsableTextAbout')" ng-mouseleave="offLinkHover('#collapsableTextAbout')">About</li>
                     <li class="list-group-item" id="collapsableTextProjects" ng-click="scrollTo('#sectionProjects')" ng-mouseover="onLinkHover('#collapsableTextProjects')" ng-mouseleave="offLinkHover('#collapsableTextProjects')">Projects</li>
                     <li class="list-group-item" id="collapsableTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#collapsableTextContact')" ng-mouseleave="offLinkHover('#collapsableTextContact')">Contact</li>

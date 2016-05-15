@@ -26,7 +26,7 @@ body {
 #homeTextContainer {
     display: inline-block;
     position: relative;
-    top: 40%;
+    top: 36%;
     color: #FFFFFF;
 }
 
@@ -145,9 +145,13 @@ body {
     margin-top: 12px;
 }
 
+.list-group a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .list-group-item:first-child {
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
+    border-radius: 0px !important;
 }
 
 #collapsableTextContact {

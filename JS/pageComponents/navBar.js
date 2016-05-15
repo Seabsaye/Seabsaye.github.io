@@ -41,7 +41,7 @@ angular.module("navBarModule", ["pageLayoutModule", "constantsModule"])
 		hyperTextFactory.disableHoverCSS(link, elementType);
 	}
 
-	//mobile fix: reverts text colour of "Resume" in collapsable back to #000000 upon collapse completion
+	//reverts text colour of "Resume" in collapsable back to #000000 upon collapse completion
 	$(navBarCollapsedTabContainerId).on('hidden.bs.collapse', function () {
 		$(collapsedNavBarTextResume).css({color: "#000000"});
 	})

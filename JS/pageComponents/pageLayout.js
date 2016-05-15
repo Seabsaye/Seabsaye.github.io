@@ -210,7 +210,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 			switch (elementType) {
 				case "navBar":
 
-					Modernizr.on("pointerEvents", function(result) {
+					Modernizr.on("touch", function(result) {
 
 		                if (!result) {
 		                    $(element).stop(true).animate({color: "#1AA0D6"}, 225);

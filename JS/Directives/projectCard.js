@@ -11,7 +11,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	}
 
 	$scope.pixelbot = {
-		title: "Pixelbot", image: "Images/pixelbotLogo.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "VISIT SITE", link: "http://www.hellopixelbot.com", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
+		title: "Pixelbot", image: "Images/pixelbotLogo.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "CHECK IT OUT", link: "https://github.com/Seabsaye/iOS-Project-Alfred", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
 	}
 
 	$scope.projects = [$scope.arkParadigm, $scope.joinmi, $scope.pixelbot];

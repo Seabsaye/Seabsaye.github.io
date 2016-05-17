@@ -4,8 +4,10 @@
     
     <head>
         
+        <!-- meta-tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta charset="UTF-8"/>
+        <!-- /meta-tags -->
 
         <!-- favicon -->
         <link rel="icon" href="Images/favicon.ico" type="image/x-icon"/>
@@ -45,7 +47,7 @@
         <script src="JS/pageComponents/footer.js"></script>
         <!-- /scripts -->
 
-        <title>sebastian kolosa</title>
+        <title>Sebastian Kolosa</title>
         
     </head>
 
@@ -53,7 +55,7 @@
 
         <div id="loadingMask"></div>
 
-        <div id="navbar" ng-controller="navBarController">
+        <div id="navBar" ng-controller="navBarController">
             <p class="navBarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>
             <ul class="navBarTabsList">
                 <li class="navbarElement">
@@ -69,7 +71,6 @@
                     <p class="navBarText" id="navBarTextContact" ng-click="scrollTo('#sectionContact')" ng-mouseover="onLinkHover('#navBarTextContact')" ng-mouseleave="offLinkHover('#navBarTextContact')">Contact</p>
                 </li>
             </ul>
-        
             <div id="hamburgerCollapseToggle" data-toggle="collapse" aria-expanded="false" data-target="#collapsedNavBarTabContainer" aria-controls="collapsedNavBarTabContainer" ng-mouseover="onHamburgerHover()" ng-mouseleave="offHamburgerHover()">
                 <span class="glyphicon glyphicon-menu-hamburger" id="hamburgerIcon"></span>
             </div>
@@ -84,9 +85,9 @@
                 <ul>
             </div>
         </div>
+
         <div id="mainContainer">
             <div class="sectionContainer" id="sectionHome">
-                <!--<img id="homeBackground" src="Images/background2-min.jpg"/>-->
                 <div class="contentContainer" id="contentHome">
                     <div id="homeTextContainer" ng-controller="scrollController">
                         <h2>SEBASTIAN KOLOSA</h2>

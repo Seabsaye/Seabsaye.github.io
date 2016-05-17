@@ -6,7 +6,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	constantsFactory.setCONTENT_HOME_ID("#contentHome");
 	constantsFactory.setFOOTER_ID("#sectionContact");
 	constantsFactory.setHAMBURGER_BUTTON_ID("#hamburgerCollapseToggle");
-	constantsFactory.setNAVBAR_ID("#navbar");
+	constantsFactory.setNAVBAR_ID("#navBar");
 	constantsFactory.setNAVBAR_COLLAPSED_TAB_CONTAINER_ID("#collapsedNavBarTabContainer");
 	constantsFactory.setNAVBAR_TABS_LIST_CLASS(".navBarTabsList");
 	constantsFactory.setNAVBAR_TEXT_CLASS(".navBarText");
@@ -214,8 +214,8 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 .factory("hyperTextFactory", ["constantsFactory", function(constantsFactory) { 
 
-	var navBarId = constantsFactory.getNAVBAR_ID();
-	var navBar = document.getElementById("navbar");
+	//var navBarId = constantsFactory.getNAVBAR_ID();
+	var navBar = document.getElementById("navBar");
 	var navBarTextResume = document.getElementById("navBarTextResume");
 	var collapsedNavBarTextResume = document.getElementById("collapsableTextResume");
 	var windowWidth = $(window).width();
@@ -284,7 +284,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 					var whiteBackground = "rgb(255, 255, 255)";
 					var verticalDisplacement = $(document).scrollTop();
 
-					if ($("#navbar").css("background-color") === whiteBackground) {
+					if ($("#navBar").css("background-color") === whiteBackground) {
 
 						if (element === "#navBarTextName") {
 
@@ -292,7 +292,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 							setTimeout(function() {
 
-								if ($("#navbar").css("background-color") != whiteBackground) {
+								if ($("#navBar").css("background-color") != whiteBackground) {
 									$(element).stop(true).css({color: "#FFFFFF"});
 								}
 

@@ -35,10 +35,6 @@
 	background-color: rgba(0,0,0,0);
 }
 
-.cardButtonPrompt {
-	/*margin: 8px 14px;*/
-}
-
 .restContainer a:link, .restContainer a:visited, .restContainer a:hover {
 	text-decoration: none;
 	color: inherit;

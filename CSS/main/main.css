@@ -90,7 +90,7 @@ body {
     margin-bottom: 30px;
 }
 
-#navbar {
+#navBar {
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -98,7 +98,7 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-#navbar p {
+#navBar p, #navBar h4 {
     display: inline-block;
 }
 

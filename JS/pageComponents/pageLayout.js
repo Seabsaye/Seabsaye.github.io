@@ -10,32 +10,52 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	constantsFactory.setNAVBAR_COLLAPSED_TAB_CONTAINER_ID("#collapsedNavBarTabContainer");
 	constantsFactory.setNAVBAR_TABS_LIST_CLASS(".navBarTabsList");
 	constantsFactory.setNAVBAR_TEXT_CLASS(".navBarText");
+	constantsFactory.setLOADING_MASK_ID("#loadingMask");
 
 	layoutDimensionsFactory.instantiateInitialHeight();
 	layoutDimensionsFactory.heightResizeListener();
 
 	$scope.augmentSize = function(elementEvent, sizeMultiplier) {
+
 		var element = elementEvent.currentTarget;
+
 		buttonFactory.augmentSize(element, sizeMultiplier);
+
 	}
 
 	$scope.augmentPosition = function(elementEvent, direction, displacement) {
+
 		var element = elementEvent.currentTarget;
+
 		buttonFactory.augmentPosition(element, direction, displacement);
+
 	}
 
 	$scope.onLinkHover = function(linkEvent) {
+
 		var link = linkEvent.currentTarget;
 		var elementType = "contentContainer";
 
 		hyperTextFactory.enableHoverCSS(link, elementType);
+
 	}
 
 	$scope.offLinkHover = function(linkEvent) {
+
 		var link = linkEvent.currentTarget;
 		var elementType = "contentContainer";
+
 		hyperTextFactory.disableHoverCSS(link, elementType);
+
 	}
+
+	$(window).load(function() {
+
+		var loadingMask = constantsFactory.getLOADING_MASK_ID();
+
+		$(loadingMask).fadeOut("slow");
+
+	});
 
 
 }])
@@ -89,9 +109,9 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	return {
 
 		navBarScroll: function(scrollToElement) {
-			
+
 			var isExpanded = $(hamburgerButtonId).attr("aria-expanded");
-			
+
 			if (isExpanded == "true") {
 				$(navBarCollapsed).collapse("hide");
 			}
@@ -103,7 +123,6 @@ angular.module("pageLayoutModule", ["constantsModule"])
 			}, 600);
 
 			return false;
-
 		}
 
 	}
@@ -138,27 +157,23 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 				sizeOriginal = parseInt($(element).css("fontSize"));
 				sizeAugment = sizeOriginal * sizeMultiplier;
-
 				priorElementProperties.size = sizeOriginal;
 				priorElementProperties.sizeElement = element;
 
 			}
 
 			$(element).animate({fontSize: sizeAugment}, 225);
-
 		},
 
 		augmentPosition: function(element, direction, displacement) {
 
 			var positionOriginal;
 			var positionAugment;
-
 			var displacementDirection;
 
 			$(element).css({position: "relative"});
 
 			switch (direction) {
-
 				case "vertical":
 					displacementDirection = "top";
 					break;
@@ -167,7 +182,6 @@ angular.module("pageLayoutModule", ["constantsModule"])
 					break;
 				default:
 					console.log("invalid direction parameter");
-
 			}
 
 			//if element newly scrolled on
@@ -178,7 +192,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 				} else {
 					positionOriginal = parseInt($(element).css(displacementDirection));
 				}
-			
+
 				priorElementProperties.position = positionOriginal;
 				priorElementProperties.positionElement = element;
 
@@ -187,7 +201,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 			positionAugment = priorElementProperties.position + displacement + "px";
 
 			var displacementObject = {};
-	
+
 			displacementObject[displacementDirection] = positionAugment; 
 
 			$(element).stop(true).animate(displacementObject);
@@ -211,6 +225,7 @@ angular.module("pageLayoutModule", ["constantsModule"])
 		enableHoverCSS: function(element, elementType) {
 			
 			switch (elementType) {
+
 				case "navBar":
 
 					$(element).stop(true).animate({color: "#1AA0D6"}, 225);
@@ -219,11 +234,9 @@ angular.module("pageLayoutModule", ["constantsModule"])
 
 						//reverts text colour of "Resume" in collapsable back to #000000 upon hovering onto other tabs
 						if (element != collapsedNavBarTextResume) {
-
 							if ($(collapsedNavBarTextResume).css("color") === "rgb(26, 160, 214)") {
 								$(collapsedNavBarTextResume).animate({color: "#000000"}, 225);
 							}
-
 						}
 
 					} else {
@@ -256,7 +269,8 @@ angular.module("pageLayoutModule", ["constantsModule"])
 					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.37}) }, 225);
 					break;
 				default:
-					console.log("unrecognized elementType");
+					//invalid elementType
+
 			}
 
 		},
@@ -299,10 +313,11 @@ angular.module("pageLayoutModule", ["constantsModule"])
 	
 					break;
 
-
 				case "contentContainer":
 					$(element).stop(true).animate({color: jQuery.Color({lightness: 0.45}) }, 225);
 					break;
+				default: 
+					//invalid elementType
 
 			}
 

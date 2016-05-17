@@ -32,6 +32,10 @@
         <script src="JS/plugins/jquery.color.js"></script>
         <!-- /js-frameworks -->
 
+        <!-- js-google-analytics -->
+        <script src="JS/plugins/googleAnalytics.js"></script>
+        <!-- /js-google-analytics -->
+
         <!-- scripts -->
         <script src="JS/Modules/module.js"></script>
         <script src="JS/Directives/projectCard.js"></script>
@@ -46,6 +50,8 @@
     </head>
 
     <body ng-controller="pageLayoutController">
+
+        <div id="loadingMask"></div>
 
         <div id="navbar" ng-controller="navBarController">
             <p class="navBarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>

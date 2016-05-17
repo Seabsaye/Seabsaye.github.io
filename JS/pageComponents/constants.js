@@ -9,6 +9,7 @@ angular.module("constantsModule", [])
 	var NAVBAR_COLLAPSED_TAB_CONTAINER_ID;
 	var NAVBAR_TABS_LIST_CLASS;
 	var NAVBAR_TEXT_CLASS;
+	var LOADING_MASK_ID;
 
 	return {
 
@@ -40,6 +41,10 @@ angular.module("constantsModule", [])
 			NAVBAR_TEXT_CLASS = navBarTextClass;
 		},
 
+		setLOADING_MASK_ID: function(loadingMaskId) {
+			LOADING_MASK_ID = loadingMaskId;
+		},
+
 		getCONTENT_HOME_ID: function() {
 			return CONTENT_HOME_ID;
 		},
@@ -66,6 +71,10 @@ angular.module("constantsModule", [])
 
 		getNAVBAR_TEXT_CLASS: function() {
 			return NAVBAR_TEXT_CLASS;
+		},
+
+		getLOADING_MASK_ID: function() {
+			return LOADING_MASK_ID;
 		}
 		
 	}

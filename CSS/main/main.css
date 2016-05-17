@@ -98,7 +98,7 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-#navBar p {
+#navBar p, #navBar h4 {
     display: inline-block;
 }
 

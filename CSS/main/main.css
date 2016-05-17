@@ -98,7 +98,7 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-#navBar p, #navBar h4 {
+#navBar p {
     display: inline-block;
 }
 
@@ -112,13 +112,13 @@ body {
     margin: 0;
 }
 
-.navbarElement {
+.navBarElement {
     display: inline-block;
     margin: 0px 12px;
     height: 32px;
 }
 
-.navbarElement a:hover {
+.navBarElement a:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
@@ -129,8 +129,13 @@ body {
     cursor: pointer;
 }
 
-.navBarText:first-child {
-    margin-left: 12px;
+#navBarTextName {
+    margin: 10px 0px 0px 15px;
+    font-size: 20px;
+}
+
+#navBarTextContact {
+    margin-right: 3px;
 }
 
 #hamburgerCollapseToggle {
@@ -152,7 +157,7 @@ body {
 }
 
 #collapsedNavBarTabContainer {
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .list-group a {

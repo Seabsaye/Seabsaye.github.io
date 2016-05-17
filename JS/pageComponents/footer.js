@@ -14,6 +14,7 @@ angular.module("footerModule", ["constantsModule", "pageLayoutModule"])
 
 		var button = $event.currentTarget;
 		var opacity = "0.04";
+
 		buttonFactory.upTheOpacity(button, opacity);
 
 	}
@@ -21,6 +22,7 @@ angular.module("footerModule", ["constantsModule", "pageLayoutModule"])
 	$scope.buttonOffHover = function($event) {
 
 		var button = $event.currentTarget;
+
 		buttonFactory.downTheOpacity(button);
 
 	}
@@ -31,7 +33,6 @@ angular.module("footerModule", ["constantsModule", "pageLayoutModule"])
 
 	var footerId = constantsFactory.getFOOTER_ID();
 	var footerHeight = parseInt($(footerId).css("height"));
-
 	var copyrightMargin = document.getElementById("copyrightStatement");
 	var connectSquares = document.getElementsByClassName("connectSquare");
 
@@ -44,6 +45,7 @@ angular.module("footerModule", ["constantsModule", "pageLayoutModule"])
 			if (windowWidth < 768) {
 
 				var height = (footerHeight / 1.5) + "px";
+
 				$(footerId).css({height: height});
 				$(copyrightMargin).css({marginTop: "24px"});
 
@@ -54,13 +56,14 @@ angular.module("footerModule", ["constantsModule", "pageLayoutModule"])
 			} else {
 
 				var height = footerHeight + "px";
+
 				$(footerId).css({height: height});
 				$(copyrightMargin).css({marginTop: "50px"});
 
 				for (var i=0; i<connectSquares.length; i++) {
 					$(connectSquares[i]).css({margin: "44px 6.75px 0px 6.75px", padding: "10px 14px"});
 				}
-
+				
 			}
 
 		}

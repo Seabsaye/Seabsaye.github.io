@@ -7,7 +7,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	};
 
 	$scope.joinmi = {
-		title: "Joinmi", image: "Images/joinmiLogo.svg", description: "App that streamlines impomptue get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", button: "CHECK IT OUT", link: "http://devpost.com/software/joinmi", buttonIndex: 1, imgStyle: "margin-top: 12%"
+		title: "Joinmi", image: "Images/joinmiLogo.svg", description: "App that streamlines impromptu get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", button: "CHECK IT OUT", link: "http://devpost.com/software/joinmi", buttonIndex: 1, imgStyle: "margin-top: 12%"
 	}
 
 	$scope.pixelbot = {

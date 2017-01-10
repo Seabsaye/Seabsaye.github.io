@@ -2,19 +2,47 @@ angular.module("cardModule", ["pageLayoutModule"])
 
 .controller("cardController", ["$scope", "buttonFactory", function($scope, buttonFactory) {
 
+	$scope.td = {
+		title: "TD Innovation Labs", 
+		image: "Images/tdBankLogo.png", 
+		description: "Architected a child savings breakdown feature in TD Family Allowance using Objective-C, and built a new, confidential Swift app to the MVP", 
+		button: "CHECK IT OUT", 
+		buttonIndex: 0,
+		link: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8",
+		imgStyle: "margin-top: 12%; height: 140px"
+	};
+
 	$scope.arkParadigm = {
-		title: "Ark Paradigm", image: "Images/arkParadigmLogoTitle.png", description: "Developed startup's website using HTML5, CSS3, AngularJS, jQuery, MySQL, and Python.", button: "CHECK IT OUT", link: "http://arkParadigm.com", buttonIndex: 0, imgStyle: "margin-top: 22%"
+		title: "Ark Paradigm", 
+		image: "Images/arkParadigmLogoTitle.png", 
+		description: "Developed startup's website using HTML5, CSS3, AngularJS, jQuery, MySQL, and Python.", 
+		button: "CHECK IT OUT", 
+		link: "http://arkParadigm.com", 
+		buttonIndex: 1, 
+		imgStyle: "margin-top: 22%"
 	};
 
 	$scope.joinmi = {
-		title: "Joinmi", image: "Images/joinmiLogo.svg", description: "App that streamlines impromptu get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", button: "CHECK IT OUT", link: "http://devpost.com/software/joinmi", buttonIndex: 1, imgStyle: "margin-top: 12%"
-	}
+		title: "Joinmi", 
+		image: "Images/joinmiLogo.svg", 
+		description: "App that streamlines impromptu get togethers. Built using the Phonegap framework at Hack the 6ix 2016.", 
+		button: "CHECK IT OUT", 
+		link: "http://devpost.com/software/joinmi", 
+		buttonIndex: 2, 
+		imgStyle: "margin-top: 12%"
+	};
 
 	$scope.pixelbot = {
-		title: "Pixelbot", image: "Images/pixelbotLogo.png", description: "Building \"Uber for condos\" iOS app for startup using Swift 2, PHP, and MySQL.", button: "CHECK IT OUT", link: "https://github.com/Seabsaye/iOS-Project-Alfred", buttonIndex: 2, imgStyle: "margin-top: 15%; height: 140px"
-	}
+		title: "Pixelbot", 
+		image: "Images/pixelbotLogo.png", 
+		description: "Built \"Uber for condos\" iOS app beta for startup using Swift, PHP, and MySQL.", 
+		button: "CHECK IT OUT", 
+		link: "https://github.com/Seabsaye/iOS-Project-Alfred", 
+		buttonIndex: 3, 
+		imgStyle: "margin-top: 15%; height: 140px"
+	};
 
-	$scope.projects = [$scope.arkParadigm, $scope.joinmi, $scope.pixelbot];
+	$scope.projects = [$scope.td, $scope.arkParadigm, $scope.joinmi, $scope.pixelbot];
 
 	var cardButtonInstances = document.getElementsByClassName("cardButton");
 

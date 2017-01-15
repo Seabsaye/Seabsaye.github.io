@@ -9,17 +9,19 @@ angular.module("cardModule", ["pageLayoutModule"])
 		button: "GET IT",
 		link: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8",
 		buttonIndex: 0,
-		imgStyle: "margin-top: 15%; height: 140px"
+		imgStyle: "margin-top: 15%; height: 140px",
+		imageLink: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8"
 	};
 
 	$scope.td = {
 		title: "TD Innovation Labs", 
 		image: "Images/tdBankLogo.png", 
 		description: "Built a significant, currently confidential Swift app to the MVP, and architected features such as child savings breakdown in the TD Family Allowance Objective-C app.", 
-		button: "CHECK IT OUT",
+		button: "GET IT",
 		link: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8",
 		buttonIndex: 1,
-		imgStyle: "margin-top: 15%; height: 140px"
+		imgStyle: "margin-top: 15%; height: 140px",
+		imageLink: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8"
 	};
 
 	$scope.arkParadigm = {
@@ -29,7 +31,8 @@ angular.module("cardModule", ["pageLayoutModule"])
 		button: "CHECK IT OUT", 
 		link: "http://arkParadigm.com", 
 		buttonIndex: 2, 
-		imgStyle: "margin-top: 22%"
+		imgStyle: "margin-top: 22%",
+		imageLink: "http://arkParadigm.com"
 	};
 
 	$scope.joinmi = {
@@ -39,7 +42,8 @@ angular.module("cardModule", ["pageLayoutModule"])
 		button: "CHECK IT OUT", 
 		link: "http://devpost.com/software/joinmi", 
 		buttonIndex: 3, 
-		imgStyle: "margin-top: 12%"
+		imgStyle: "margin-top: 12%",
+		imageLink: "http://devpost.com/software/joinmi"
 	};
 
 	$scope.pixelbot = {
@@ -49,7 +53,8 @@ angular.module("cardModule", ["pageLayoutModule"])
 		button: "CHECK IT OUT", 
 		link: "https://github.com/Seabsaye/iOS-Project-Alfred", 
 		buttonIndex: 4, 
-		imgStyle: "margin-top: 15%; height: 140px"
+		imgStyle: "margin-top: 15%; height: 140px",
+		imageLink: "http://www.hellopixelbot.com"
 	};
 
 	$scope.projects = [$scope.everest, $scope.td, $scope.arkParadigm, $scope.joinmi, $scope.pixelbot];

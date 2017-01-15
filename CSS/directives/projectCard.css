@@ -1,4 +1,5 @@
 .cardFrame {
+	position: relative;
 	width: 330px;
 	height: 490px;
 	border-radius: 6px;
@@ -9,25 +10,34 @@
 }
 
 .imageContainer {
+	position: absolute;
+	width: inherit;
 	border-top-left-radius: 6px; 
 	border-top-right-radius: 6px; 
 	height: 200px;
 }
 
 .restContainer {
-	margin: auto;
+	position: absolute;
+	bottom: 0px;
 	text-align: center;
-	width: 84%;
+	padding: 0% 6% 0% 6%;
+	height: 290px;
+	width: inherit;
 }
 
 .cardDescription {
-	margin-top: 16px;
+	margin-top: 8px;
 }
 
 .cardButton {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0px;
+	right: 0px;
+	bottom: 30px;
 	cursor: pointer;
-	margin: inherit;
-	margin-top: 70px;
 	width: 150px;
 	display: inline-block;
 	border: 1px solid #e4e4e4;

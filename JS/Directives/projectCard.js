@@ -6,11 +6,11 @@ angular.module("cardModule", ["pageLayoutModule"])
 		title: "Everest",
 		image: "Images/everestLogo.png",
 		description: "iOS app that optimizes event communication and organization via in-event newsfeeds, direct messaging, lists of guests and hosts, and more. Built using Swift coupled with a NodeJS and MongoDB backend.",
-		button: "GET IT",
-		link: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8",
+		button: "CHECK IT OUT",
+		link: "http://www.everestapp.ca",
 		buttonIndex: 0,
 		imgStyle: "margin-top: 15%; height: 140px",
-		imageLink: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8"
+		imageLink: "http://www.everestapp.ca"
 	};
 
 	$scope.td = {

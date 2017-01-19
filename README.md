@@ -1,2 +1,2 @@
-# Seabsaye.github.io
-Assets for my website.
+# Portfolio
+This repository contains the source code for my website.

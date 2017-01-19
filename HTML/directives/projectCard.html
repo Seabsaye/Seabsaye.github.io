@@ -1,7 +1,9 @@
 <div class="cardFrame" ng-controller="cardController">
-	<div class="imageContainer">
-		<img ng-src="{{cardProperties.image}}" style="{{cardProperties.imgStyle}}"/>
-	</div>
+	<a ng-href="{{cardProperties.imageLink}}" target="_blank">
+		<div class="imageContainer">
+			<img ng-src="{{cardProperties.image}}" style="{{cardProperties.imgStyle}}"/>
+		</div>
+	</a>
 	<div class="restContainer">
 		<h2 class="cardTitle">{{cardProperties.title}}</h2>
 		<p class="cardDescription">{{cardProperties.description}}</p>

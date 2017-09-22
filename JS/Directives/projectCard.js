@@ -6,12 +6,23 @@ angular.module("cardModule", ["pageLayoutModule"])
 		title: "Everest",
 		image: "Images/everestLogo.png",
 		description: "iOS app that optimizes event communication and organization via in-event newsfeeds, direct messaging, lists of guests and hosts, and more. Built using Swift, NodeJS, and MongoDB coupled with AWS EC2.",
-		button: "CHECK IT OUT",
+		button: "COMPANY WEBSITE",
 		link: "http://www.everestapp.ca",
 		buttonIndex: 0,
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "http://www.everestapp.ca"
 	};
+
+	$scope.tribalscale = {
+		title: "TribalScale",
+		image: "Images/tribalscaleLogo.png",
+		description: "Architected cruise guest organizer user interface for major cruise line's Objective-C iOS app used by 20k+ cruise guests daily.",
+		button: "CHECK IT OUT",
+		link: "http://www.tribalscale.com",
+		buttonIndex: 1,
+		imgStyle: "margin-top: 15%; height: 140px",
+		imageLink: "http://www.tribalscale.com"
+	}
 
 	$scope.td = {
 		title: "TD Innovation Labs", 
@@ -19,7 +30,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 		description: "Built a significant, currently confidential Swift app to the MVP, and architected features such as child savings breakdown in the TD Family Allowance Objective-C app.", 
 		button: "GET IT",
 		link: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8",
-		buttonIndex: 1,
+		buttonIndex: 2,
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "https://itunes.apple.com/ca/app/family-allowance/id1090612479?mt=8"
 	};
@@ -30,7 +41,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 		description: "Implemented startup's website using HTML5, CSS3, AngularJS 1, jQuery, MySQL, and Python.", 
 		button: "CHECK IT OUT", 
 		link: "http://arkParadigm.com", 
-		buttonIndex: 2, 
+		buttonIndex: 3, 
 		imgStyle: "margin-top: 22%",
 		imageLink: "http://arkParadigm.com"
 	};
@@ -41,7 +52,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 		description: "App that streamlines impromptu get togethers. Built using HTML5, CSS3 and JavaScript with the Phonegap framework at Hack the 6ix 2016.", 
 		button: "CHECK IT OUT", 
 		link: "http://devpost.com/software/joinmi", 
-		buttonIndex: 3, 
+		buttonIndex: 4, 
 		imgStyle: "margin-top: 12%",
 		imageLink: "http://devpost.com/software/joinmi"
 	};
@@ -52,7 +63,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 		description: "Developed \"Uber for condos\" iOS app for startup using Swift, PHP, and MySQL, as well as integrating Facebook, Google, and native login and account-merging systems.", 
 		button: "CHECK IT OUT", 
 		link: "https://github.com/Seabsaye/iOS-Project-Alfred", 
-		buttonIndex: 4, 
+		buttonIndex: 5, 
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "http://www.hellopixelbot.com"
 	};

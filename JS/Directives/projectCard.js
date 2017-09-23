@@ -5,7 +5,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	$scope.everest = {
 		title: "Everest",
 		image: "Images/everestLogo.png",
-		description: "iOS app that optimizes event communication and organization via in-event newsfeeds, direct messaging, lists of guests and hosts, and more. Built using Swift, NodeJS, and MongoDB coupled with AWS EC2.",
+		description: "iOS app that optimizes event communication and organization via in-event newsfeeds, direct messaging, lists of guests and hosts, and more. Built using Swift, Node.js, and MongoDB coupled with AWS EC2.",
 		button: "CHECK IT OUT",
 		link: "http://www.everestapp.ca",
 		buttonIndex: 0,

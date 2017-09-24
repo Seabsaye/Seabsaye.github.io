@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
 
 <html ng-app="siteModule">
-    
     <head>
-        
         <!-- meta-tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta charset="UTF-8"/>
@@ -48,13 +46,10 @@
         <!-- /scripts -->
 
         <title>Sebastian Kolosa</title>
-        
     </head>
 
     <body ng-controller="pageLayoutController">
-
         <div id="loadingMask"></div>
-
         <div id="navBar" ng-controller="navBarController">
             <p class="navBarText" id="navBarTextName" ng-click="scrollTo('#sectionHome')" ng-mouseover="onLinkHover('#navBarTextName')" ng-mouseleave="offLinkHover('#navBarTextName')">Sebastian Kolosa</p>
             <ul class="navBarTabsList">
@@ -85,13 +80,12 @@
                 <ul>
             </div>
         </div>
-
         <div id="mainContainer">
             <div class="sectionContainer" id="sectionHome">
                 <div class="contentContainer" id="contentHome">
                     <div id="homeTextContainer" ng-controller="scrollController">
                         <h2>SEBASTIAN KOLOSA</h2>
-                        <p>Student | Designer | Innovator</p>
+                        <p>Student | Developer | Innovator</p>
                         <a href="https://github.com/Seabsaye" target="_blank">
                             <i class="fa fa-github-alt homeContactIcon"></i>
                         </a>
@@ -144,7 +138,5 @@
                 </div>
             </div>
         </div>
-
     </body>
-
 </html>

@@ -7,7 +7,7 @@ angular.module("cardModule", ["pageLayoutModule"])
                 image: "Images/pagerdutyLogo.png",
                 description: "Developed live-updating using WebSockets in the iOS app, " + 
                 			 "re-architected iOS app sections using Protocol-Oriented-Programming, " +
-                			 "led engineering meetings and initiatives discussing new mobile features and improvements",
+                			 "and led engineering initiatives for new mobile features and improvements.",
                 button: "CHECK IT OUT",
                 link: "https://itunes.apple.com/us/app/pagerduty/id594039512?mt=8",
                 buttonIndex: 0,

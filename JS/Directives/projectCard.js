@@ -5,7 +5,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 	$scope.creditkarma = {
                 title: "Credit Karma",
                 image: "Images/ckLogo.png",
-                description: "Architected an Apollo GraphQL client for the UK product ecosystem, " +
+                description: "Built an Apollo GraphQL client for the UK product ecosystem, " +
                 			 "setting the standard for all future GraphQL work. Also developed a GraphQL " +
                 			 "scalar validation framework used to validate all UK GraphQL network traffic.",
                 button: "CHECK IT OUT",

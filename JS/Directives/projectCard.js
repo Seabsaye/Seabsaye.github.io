@@ -2,6 +2,19 @@ angular.module("cardModule", ["pageLayoutModule"])
 
 .controller("cardController", ["$scope", "buttonFactory", function($scope, buttonFactory) {
 	
+	$scope.creditkarma = {
+                title: "Credit Karma",
+                image: "Images/ckLogo.png",
+                description: "Architected an Apollo GraphQL client for the UK product ecosystem, " +
+                			 "setting the standard for all future GraphQL work. Also developed a GraphQL " +
+                			 "scalar validation framework used to validate all UK GraphQL network traffic.",
+                button: "CHECK IT OUT",
+                link: "https://www.creditkarma.co.uk/",
+                buttonIndex: 0,
+                imgStyle: "margin-top: 15%; height: 140px",
+                imageLink: "https://www.creditkarma.com/" 
+        };
+
 	$scope.pagerduty = {
                 title: "PagerDuty",
                 image: "Images/pagerdutyLogo.png",
@@ -10,7 +23,7 @@ angular.module("cardModule", ["pageLayoutModule"])
                 			 "and led engineering initiatives for new mobile features and improvements.",
                 button: "CHECK IT OUT",
                 link: "https://itunes.apple.com/us/app/pagerduty/id594039512?mt=8",
-                buttonIndex: 0,
+                buttonIndex: 1,
                 imgStyle: "margin-top: 15%; height: 140px",
                 imageLink: "https://www.pagerduty.com" 
         };
@@ -24,7 +37,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 					 "with AWS EC2.",
 		button: "CHECK IT OUT",
 		link: "http://www.everestapp.ca",
-		buttonIndex: 1,
+		buttonIndex: 2,
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "http://www.everestapp.ca"
 	};
@@ -37,7 +50,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 					 "this feature and many others in an Extreme Programming environment.",
 		button: "COMPANY SITE",
 		link: "http://www.tribalscale.com",
-		buttonIndex: 2,
+		buttonIndex: 3,
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "http://www.tribalscale.com"
 	}
@@ -50,7 +63,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 					  "authentication for the TD Family Allowance Objective-C app.", 
 		button: "CHECK IT OUT",
 		link: "https://appadvice.com/app/family-allowance/1090612479",
-		buttonIndex: 3,
+		buttonIndex: 4,
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "https://appadvice.com/app/family-allowance/1090612479"
 	};
@@ -62,7 +75,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 			         "jQuery, MySQL, and Python.", 
 		button: "CHECK IT OUT", 
 		link: "http://arkParadigm.com", 
-		buttonIndex: 4, 
+		buttonIndex: 5, 
 		imgStyle: "margin-top: 22%",
 		imageLink: "http://arkParadigm.com"
 	};
@@ -75,7 +88,7 @@ angular.module("cardModule", ["pageLayoutModule"])
 		 			 "Hack the 6ix 2016.", 
 		button: "CHECK IT OUT", 
 		link: "http://devpost.com/software/joinmi", 
-		buttonIndex: 5, 
+		buttonIndex: 6, 
 		imgStyle: "margin-top: 12%",
 		imageLink: "http://devpost.com/software/joinmi"
 	};
@@ -88,12 +101,12 @@ angular.module("cardModule", ["pageLayoutModule"])
 					 "an account data merging system.", 
 		button: "CHECK IT OUT", 
 		link: "https://github.com/Seabsaye/iOS-Project-Alfred", 
-		buttonIndex: 6, 
+		buttonIndex: 7, 
 		imgStyle: "margin-top: 15%; height: 140px",
 		imageLink: "http://www.hellopixelbot.com"
 	};
 
-	$scope.projects = [$scope.pagerduty, $scope.everest, $scope.tribalscale, $scope.td, $scope.arkParadigm, $scope.joinmi, $scope.pixelbot];
+	$scope.projects = [$scope.creditkarma, $scope.pagerduty, $scope.everest, $scope.tribalscale, $scope.td, $scope.arkParadigm, $scope.joinmi, $scope.pixelbot];
 
 	var cardButtonInstances = document.getElementsByClassName("cardButton");
 
